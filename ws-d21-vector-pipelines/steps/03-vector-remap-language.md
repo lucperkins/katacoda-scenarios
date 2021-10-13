@@ -14,5 +14,5 @@ with no arguments:
 `vector vrl`{{execute interrupt}}
 
 ```
-vector vrl --inputs /etc/vector/vrl/events.jsonl
+vector vrl --input /etc/vector/vrl/events.jsonl
 ```{{execute interrupt}}
