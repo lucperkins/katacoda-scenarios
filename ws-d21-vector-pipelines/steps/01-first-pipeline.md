@@ -5,8 +5,13 @@ Let's kick off the practical portion of this workshop by building our own very s
 the [`generator`][generator] source, the [`remap`][remap] transform and [Vector Remap
 Language][vrl], and the [`console`][console] sink.
 
-Run `vector --config-dir /etc/vector/first-graph --watch-config vector.toml`{{execute}} to start up
-Vector.
+Without any further ado, let's start up Vector:
+
+```
+vector \
+  --config-dir /etc/vector/first-pipeline \
+  --watch-config vector.toml
+````{{execute}}
 
 **Spoiler alert**: this will initially throw an error that we need to update our Vector
 configuration to fix.
