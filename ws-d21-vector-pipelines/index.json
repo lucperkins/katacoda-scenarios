@@ -24,7 +24,11 @@
       "host01": [
         {
           "file": "first-pipeline/vector.toml",
-          "target": "/etc/vector/first-pipeline"
+          "target": "/etc/vector/first-pipeline/vector.toml"
+        },
+        {
+          "file": "monitoring-vector/vector.toml",
+          "target": "/etc/vector/monitoring-vector/vector.toml"
         }
       ]
     }
