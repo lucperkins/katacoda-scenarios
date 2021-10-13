@@ -8,7 +8,7 @@ access_key = "${AWS_SECRET_ACCESS_KEY}"
 [transforms.parse_and_modify]
 type = "remap"
 inputs = ["kinesis_logs"]
-file = "./parse.vrl"
+file = "/etc/vector/unit-testing/parse.vrl"
 
 # Ship the resulting logs to an S3 bucket
 [sinks.s3_out]
