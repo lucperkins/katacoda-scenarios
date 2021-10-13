@@ -13,13 +13,17 @@
     "steps": [
       {
         "title": "Our first processing pipeline with Vector",
-        "file": "steps/01-first-pipeline.md"
+        "text": "steps/01-first-pipeline.md"
+      },
+      {
+        "title": "Monitoring Vector with `vector tap` and `vector top`",
+        "text": "steps/02-monitoring-vector.md"
       }
     ],
     "assets": {
       "host01": [
         {
-          "file": "first-graph/vector.toml",
+          "file": "first-pipeline/vector.toml",
           "target": "/etc/vector/first-pipeline"
         }
       ]

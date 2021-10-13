@@ -4,11 +4,13 @@ enabled = true
 address = "127.0.0.1:8686"
 playground = true
 
+# Generate random JSON logs using Vector itself
 [sources.random_logs]
 type = "generator"
 format = "json"
 interval = 1
 
+# Use Vector Remap Language to parse the JSON string
 [transforms.modify]
 type = "remap"
 inputs = ["random_logs"]
@@ -21,6 +23,7 @@ if err != null {
 . = js
 '''
 
+# Send the resulting logs off to nowhere
 [sinks.ether]
 type = "blackhole"
 inputs = ["modify"]
