@@ -22,8 +22,12 @@
         "text": "steps/03-vector-remap-language.md"
       },
       {
+        "title": "Unit testing Vector transforms",
+        "text": "steps/04-unit-testing.md"
+      },
+      {
         "title": "Vector deployment topologies",
-        "text": "steps/04-topologies.md"
+        "text": "steps/05-topologies.md"
       }
     ],
     "finish": {
@@ -50,6 +54,18 @@
         {
           "file": "vrl/events.jsonl",
           "target": "/etc/vector/vrl"
+        },
+        {
+          "file": "unit-testing/vector.toml",
+          "target": "/etc/vector/unit-testing"
+        },
+        {
+          "file": "unit-testing/test.toml",
+          "target": "/etc/vector/unit-testing"
+        },
+        {
+          "file": "unit-testing/parse.vrl",
+          "target": "/etc/vector/unit-testing"
         }
       ]
     }

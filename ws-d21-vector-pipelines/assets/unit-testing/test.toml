@@ -1,0 +1,22 @@
+[[tests]]
+name = "Kinesis Firehose logs"
+
+[[tests.inputs]]
+insert_at = "parse_and_modify"
+type = "log"
+
+[tests.inputs.log_fields]
+message = "SUCCESS"     # Should be lower case
+code = 200              # Leave this alone
+environment = "staging" # Should be set as a tag instead
+username = "tonydanza"  # This should be deleted
+id = "b0312e068b1e"     # Should exist and be a 12-character string
+
+[[tests.outputs]]
+extract_from = "parse_and_modify"
+
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''
+false
+'''

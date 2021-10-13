@@ -1,0 +1,21 @@
+# Pull in logs from AWS Kinesis Firehose
+[sources.kinesis_logs]
+type = "aws_kinesis_firehose"
+address = "0.0.0.0:443"
+access_key = "${AWS_SECRET_ACCESS_KEY}"
+
+# Parse and modify the logs using an external VRL file
+[transforms.parse_and_modify]
+type = "remap"
+inputs = ["kinesis_logs"]
+file = "./parse.vrl"
+
+# Ship the resulting logs to an S3 bucket
+[sinks.s3_out]
+type = "aws_s3"
+inputs = ["parse_and_modify"]
+bucket = "logs-from-kinesis"
+key_prefix = "data=%F/"
+compression = "gzip"
+region = "us-east-1"
+encoding = { codec = "ndjson" }
