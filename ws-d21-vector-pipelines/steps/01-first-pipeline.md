@@ -4,6 +4,8 @@ it, route it, and more), and [sinks] send that data off somewhere else, such as 
 Clickhouse, a cloud storage system like AWS S3, a [Kafka] topic, a file in the filesystem, a
 service like Datadog, etc.
 
+## One source, one sink, done
+
 Let's kick off the practical portion of this workshop by building our own very simple pipeline using
 the [`generator`][generator] source, the [`remap`][remap] transform and [Vector Remap
 Language][vrl], and the [`console`][console] sink.
@@ -24,6 +26,10 @@ vector \
 
 This command will initially throw an error. But don't fret! We'll fix that by updating our Vector
 configuration.
+
+## Multiple sources and sinks
+
+Once we've run our first simple pipeline, we'll build a pipeline with multiple sources and sinks.
 
 [console]: https://vector.dev/docs/reference/configuration/sinks/console
 [generator]: https://vector.dev/docs/reference/configuration/sources/generator

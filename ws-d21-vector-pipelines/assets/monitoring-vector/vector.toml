@@ -4,26 +4,49 @@ enabled = true
 address = "127.0.0.1:8686"
 playground = true
 
-# Generate random JSON logs using Vector itself
-[sources.random_logs]
+# Generate random logs using Vector itself
+[sources.random_json_logs]
 type = "generator"
 format = "json"
 interval = 1
 
-# Use Vector Remap Language to parse the JSON string
-[transforms.modify]
+[sources.random_syslog_logs]
+type = "generator"
+format = "syslog"
+interval = 1
+
+# Use Vector Remap Language to parse both log streams
+[transforms.modify_json_logs]
 type = "remap"
-inputs = ["random_logs"]
+inputs = ["random_json_logs"]
 source = '''
-js, err = parse_json(.message)
+obj, err = parse_json(.message)
 if err != null {
   log(err, level: "error")
 }
 
-. = js
+. = obj
 '''
 
-# Send the resulting logs off to nowhere
+[transforms.modify_syslog_logs]
+type = "remap"
+inputs = ["random_syslog_logs"]
+source = '''
+obj, err = parse_syslog(.message)
+if err != null {
+  log(err, level: "error")
+}
+
+. = obj
+'''
+
+# Send some logs nowhere and write some logs to a file
 [sinks.ether]
 type = "blackhole"
-inputs = ["modify"]
+inputs = ["modify_json_logs"]
+
+[sinks.local_file]
+type = "file"
+inputs = ["modify_syslog_logs"]
+path = "/etc/vector/logs/random-syslog.log"
+encoding = { codec = "ndjson" }
