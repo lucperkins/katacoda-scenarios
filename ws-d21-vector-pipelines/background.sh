@@ -1,5 +1,5 @@
 # Remove unnecessary stuff that Vector installs automatically
-rm -rf /etc/vector/vector.toml /etc/vector/vector.toml
+rm -rf /etc/vector/vector.toml /etc/vector/examples
 
 # VS Code setup for extensions
 echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections

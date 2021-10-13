@@ -19,8 +19,8 @@ vector \
   --watch-config vector.toml
 ```{{execute}}
 
-**Spoiler alert**: this will initially throw an error that we need to update our Vector
-configuration to fix.
+**Spoiler alert**: this will initially throw an error that we can fix by updating our Vector
+configuration.
 
 [console]: https://vector.dev/docs/reference/configuration/sinks/console
 [generator]: https://vector.dev/docs/reference/configuration/sources/generator
