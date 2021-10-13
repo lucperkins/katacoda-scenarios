@@ -1,0 +1,10 @@
+[sources.random]
+type = "generator"
+format = "json"
+interval = 1
+
+[sinks.file]
+type = "file"
+inputs = ["random"]
+path = "/tmp/logs/vector-%Y-%m-%d.log"
+encoding = { codec = "ndjson", timestamp_format = "rfc3339" }

@@ -7,6 +7,11 @@ type = "vector"
 address = "0.0.0.0:9000"
 version = "2"
 
+[sources.datadog_agents]
+type = "datadog_agent"
+address = "0.0.0.0:8080"
+store_api_key = false
+
 [sources.fluent_bit_agents]
 type = "fluent"
 address = "0.0.0.0:24224"
@@ -18,6 +23,7 @@ inputs = ["*_agents"]
 [transforms.logs_router.route]
 http_logs = '.tag == "http_logs"'
 syslog_logs = '.tag == "syslog_logs"'
+datadog_agent_logs = '.tag == "datadog_agent_logs"'
 fluent_bit_logs = '.tag == "fluent_bit_logs"'
 
 [transforms.parse_and_sanitize_http_logs]
@@ -31,6 +37,13 @@ source = '''
 [transforms.parse_and_sanitize_syslog_logs]
 type = "remap"
 inputs = ["logs_router.syslog_logs"]
+source = '''
+.
+'''
+
+[transforms.parse_and_sanitize_datadog_agent_logs]
+type = "remap"
+inputs = ["logs_router.datadog_agent_logs"]
 source = '''
 .
 '''
@@ -56,6 +69,6 @@ condition = 'true'
 
 [sinks.json_out]
 type = "console"
-inputs = ["filter_*", "parse_and_sanitize_fluent_bit_logs"]
+inputs = ["filter_*", "parse_and_sanitize_datadog_agent_logs", "parse_and_sanitize_fluent_bit_logs"]
 target = "stdout"
 encoding = { codec = "json" }

@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3.8'
 services:
   vector_http_logs_agent:
     image: timberio/vector:0.17.0-alpine
@@ -16,6 +16,18 @@ services:
       - ./vector/agent/syslog:/etc/vector:ro
     depends_on:
       - aggregator
+  datadog_agent:
+    image: gcr.io/datadoghq/agent:7
+    privileged: true
+    environment:
+      - DD_API_KEY
+    deploy:
+      replicas: 2
+    volumes:
+      - ./datadog:/etc/datadog-agent
+      - ./logs:/tmp/logs:ro
+    depends_on:
+      - aggregator
   fluentbit_agent:
     image: fluent/fluent-bit:1.8
     deploy:
@@ -31,6 +43,8 @@ services:
       # GraphQL API for vector tap and vector top
       - 8686:8686
       # Datadog Agents
+      - 8080:8080
+      # Vector Agents
       - 9000:9000
       # Fluent Bit Agents
       - 24224:24224
@@ -38,3 +52,12 @@ services:
       LOG: info
     volumes:
       - ./vector/aggregator:/etc/vector:ro
+  
+  # Vector agent producing logs for the Datadog Agent
+  dd_logs_producer:
+    image: timberio/vector:0.17.0-alpine
+    environment:
+      - DD_API_KEY
+    volumes:
+      - ./vector/producer:/etc/vector:ro
+      - ./logs:/tmp/logs
