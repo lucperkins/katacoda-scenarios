@@ -1,0 +1,26 @@
+# Enable Vector's GraphQL API to use `vector tap` and `vector top`
+[api]
+enabled = true
+address = "127.0.0.1:8686"
+playground = true
+
+[sources.random_logs]
+type = "generator"
+format = "json"
+interval = 1
+
+[transforms.modify]
+type = "remap"
+inputs = ["random_logs"]
+source = '''
+js, err = parse_json(.message)
+if err != null {
+  log(err, level: "error")
+}
+
+. = js
+'''
+
+[sinks.ether]
+type = "blackhole"
+inputs = ["modify"]
