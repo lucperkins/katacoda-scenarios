@@ -23,15 +23,15 @@
         "title": "Viewing Vector metrics in real time using `vector top`",
         "text": "steps/step3-vector-top.md"
       }
-    ]
-  },
-  "assets": {
-    "host01": [
-      {
-        "file": "first-graph/vector.toml",
-        "target": "/etc/vector/first-pipeline"
-      }
-    ]
+    ],
+    "assets": {
+      "host01": [
+        {
+          "file": "first-graph/vector.toml",
+          "target": "/etc/vector/first-pipeline"
+        }
+      ]
+    }
   },
   "backend": {
     "imageid": "datadog-base-v3"
