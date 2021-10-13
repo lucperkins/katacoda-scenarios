@@ -7,20 +7,13 @@
   "courseData": "",
   "details": {
     "intro": {
+      "background": "background.sh",
       "text": "steps/intro.md"
     },
     "steps": [
       {
         "title": "Our first processing pipeline with Vector",
-        "text": "steps/step1-first-pipeline.md"
-      },
-      {
-        "title": "Reading Vector log output using `vector tap`",
-        "text": "steps/step2-vector-tap.md"
-      },
-      {
-        "title": "Viewing Vector metrics in real time using `vector top`",
-        "text": "steps/step3-vector-top.md"
+        "file": "steps/01-first-pipeline.md"
       }
     ],
     "assets": {
