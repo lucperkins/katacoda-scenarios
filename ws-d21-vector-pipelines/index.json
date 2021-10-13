@@ -7,8 +7,7 @@
   "courseData": "",
   "details": {
     "intro": {
-      "text": "steps/intro.md",
-      "courseData": "scripts/setup.sh"
+      "text": "steps/intro.md"
     },
     "steps": [
       {
