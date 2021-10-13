@@ -1,0 +1,61 @@
+[api]
+enabled = true
+address = "0.0.0.0:8686"
+
+[sources.vector_agents]
+type = "vector"
+address = "0.0.0.0:9000"
+version = "2"
+
+[sources.fluent_bit_agents]
+type = "fluent"
+address = "0.0.0.0:24224"
+
+[transforms.logs_router]
+type = "route"
+inputs = ["*_agents"]
+
+[transforms.logs_router.route]
+http_logs = '.tag == "http_logs"'
+syslog_logs = '.tag == "syslog_logs"'
+fluent_bit_logs = '.tag == "fluent_bit_logs"'
+
+[transforms.parse_and_sanitize_http_logs]
+type = "remap"
+inputs = ["logs_router.http_logs"]
+source = '''
+.
+'''
+
+# Convert Syslog logs to JSON objects
+[transforms.parse_and_sanitize_syslog_logs]
+type = "remap"
+inputs = ["logs_router.syslog_logs"]
+source = '''
+.
+'''
+
+[transforms.parse_and_sanitize_fluent_bit_logs]
+type = "remap"
+inputs = ["logs_router.fluent_bit_logs"]
+source = '''
+.
+'''
+
+# Filter out OPTION requests
+[transforms.filter_http_logs]
+type = "filter"
+inputs = ["parse_and_sanitize_http_logs"]
+condition = 'true'
+
+# Filter out non-urgent logs
+[transforms.filter_syslog_logs]
+type = "filter"
+inputs = ["parse_and_sanitize_syslog_logs"]
+condition = 'true'
+
+[sinks.json_out]
+type = "console"
+inputs = ["filter_*", "parse_and_sanitize_fluent_bit_logs"]
+target = "stdout"
+encoding = { codec = "json" }

@@ -1,0 +1,40 @@
+version: '3.9'
+services:
+  vector_http_logs_agent:
+    image: timberio/vector:0.17.0-alpine
+    deploy:
+      replicas: 2
+    volumes:
+      - ./vector/agent/http:/etc/vector:ro
+    depends_on:
+      - aggregator
+  vector_syslog_logs_agent:
+    image: timberio/vector:0.17.0-alpine
+    deploy:
+      replicas: 2
+    volumes:
+      - ./vector/agent/syslog:/etc/vector:ro
+    depends_on:
+      - aggregator
+  fluentbit_agent:
+    image: fluent/fluent-bit:1.8
+    deploy:
+      replicas: 2
+    volumes:
+      - ./fluent-bit:/fluent-bit/etc:ro
+    depends_on:
+      - aggregator
+  aggregator:
+    container_name: vector_aggregator
+    image: timberio/vector:0.17.0-alpine
+    ports:
+      # GraphQL API for vector tap and vector top
+      - 8686:8686
+      # Datadog Agents
+      - 9000:9000
+      # Fluent Bit Agents
+      - 24224:24224
+    environment:
+      LOG: info
+    volumes:
+      - ./vector/aggregator:/etc/vector:ro

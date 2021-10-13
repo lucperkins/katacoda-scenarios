@@ -1,0 +1,18 @@
+ [sources.random_syslog_logs]
+type = "generator"
+format = "syslog"
+interval = 2
+
+[transforms.tag]
+type = "remap"
+inputs = ["random_syslog_logs"]
+source = '''
+.tag = "syslog_logs"
+'''
+
+[sinks.aggregator]
+type = "vector"
+inputs = ["tag"]
+address = "vector_aggregator:9000"
+version = "2"
+healthcheck = { enabled = true }

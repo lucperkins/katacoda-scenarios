@@ -26,8 +26,8 @@
         "text": "steps/04-unit-testing.md"
       },
       {
-        "title": "Vector deployment topologies",
-        "text": "steps/05-topologies.md"
+        "title": "Vector as an Aggregator",
+        "text": "steps/05-vector-aggregator.md"
       }
     ],
     "finish": {
@@ -66,6 +66,26 @@
         {
           "file": "unit-testing/parse.vrl",
           "target": "/etc/vector/unit-testing"
+        },
+        {
+          "file": "topologies/docker-compose.yml",
+          "target": "/etc/vector/topologies"
+        },
+        {
+          "file": "topologies/vector/aggregator/vector.toml",
+          "target": "/etc/vector/topologies/vector/aggregator"
+        },
+        {
+          "file": "topologies/vector/agent/http/vector.toml",
+          "target": "/etc/vector/topologies/vector/agent/http"
+        },
+        {
+          "file": "topologies/vector/agent/syslog/vector.toml",
+          "target": "/etc/vector/topologies/vector/agent/syslog"
+        },
+        {
+          "file": "topologies/fluent-bit/fluent-bit.conf",
+          "target": "/etc/vector/topologies/fluent-bit"
         }
       ]
     }
