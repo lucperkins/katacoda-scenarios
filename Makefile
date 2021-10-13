@@ -6,7 +6,7 @@ kill:
 	pgrep -f kclocal | xargs kill -9
 
 dev:
-	kclocal
+	kclocal -b
 
 validate:
 	katacoda validate:all --repo .
