@@ -1,5 +1,8 @@
-Vector thinks about observability data in terms of **pipelines**. Pipelines take in data using
-[sources], handle data using [transforms], and then send data off to [sinks].
+Vector thinks about observability data in terms of **pipelines**. Pipelines involve three different
+types of **components**. [Sources] take in data, [transforms] handle that data (modify it, filter
+it, route it, and more), and [sinks] send that data off somewhere else, such as to a database like
+Clickhouse, a cloud storage system like AWS S3, a [Kafka] topic, a file in the filesystem, a
+service like Datadog, etc.
 
 Let's kick off the practical portion of this workshop by building our own very simple pipeline using
 the [`generator`][generator] source, the [`remap`][remap] transform and [Vector Remap
@@ -19,11 +22,12 @@ vector \
   --watch-config vector.toml
 ```{{execute}}
 
-**Spoiler alert**: this will initially throw an error that we can fix by updating our Vector
+This command will initially throw an error. But don't fret! We'll fix that by updating our Vector
 configuration.
 
 [console]: https://vector.dev/docs/reference/configuration/sinks/console
 [generator]: https://vector.dev/docs/reference/configuration/sources/generator
+[kafka]: https://kafka.apache.org
 [remap]: https://vector.dev/docs/reference/configuration/transforms/remap
 [sinks]: https://vector.dev/docs/reference/configuration/sinks
 [sources]: https://vector.dev/docs/reference/configuration/sources

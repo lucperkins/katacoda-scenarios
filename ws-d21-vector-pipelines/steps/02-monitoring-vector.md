@@ -14,16 +14,16 @@ configuration we ended up with in the first tutorial:
 vector \
   --config-dir /etc/vector/monitoring-vector \
   --watch-config vector.toml
-```{{execute}}
+```{{execute interrupt}}
 
-Run `vector tap`{{execute T1}} to open the gates to your internal log stream.
+Run `vector tap`{{execute "vector tap"}} to open the gates to your internal log stream.
 
 ## vector top
 
 [`vector top`][top], not to be confused with `vector tap` from above, enables you to view Vector's
 internal metrics in real time. It's inspired by a systems monitoring tool called [htop].
 
-Run `vector top`{{execute T2}} to take a look at Vector's internal metrics.
+Run `vector top`{{execute "vector top"}} to take a look at Vector's internal metrics.
 
 [graphql]: https://graphql.org
 [htop]: https://htop.dev
