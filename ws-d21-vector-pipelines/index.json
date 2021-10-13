@@ -7,7 +7,6 @@
   "courseData": "",
   "details": {
     "intro": {
-      "background": "background.sh",
       "text": "steps/intro.md"
     },
     "steps": [
@@ -30,7 +29,7 @@
     }
   },
   "backend": {
-    "imageid": "datadog-base-v3"
+    "imageid": "datadog-base-v4"
   },
   "environment": {
     "uilayout": "terminal",
