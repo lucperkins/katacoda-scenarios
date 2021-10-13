@@ -5,6 +5,12 @@ Let's kick off the practical portion of this workshop by building our own very s
 the [`generator`][generator] source, the [`remap`][remap] transform and [Vector Remap
 Language][vrl], and the [`console`][console] sink.
 
+First, let's make sure Vector is installed in our environment:
+
+```
+vector --version
+```{{execute}}
+
 Without any further ado, let's start up Vector:
 
 ```
