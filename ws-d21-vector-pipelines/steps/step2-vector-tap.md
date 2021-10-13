@@ -1,5 +1,3 @@
-# Reading Vector log output using `vector tap`
-
 [`vector tap`][tap] is a command of the `vector` CLI that enables you to pipe logs from a Vector
 pipeline to your local environment.
 

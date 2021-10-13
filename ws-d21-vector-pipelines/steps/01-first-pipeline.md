@@ -1,5 +1,3 @@
-# Our first processing pipeline with Vector
-
 Vector thinks about observability data in terms of **pipelines**. Pipelines take in data using
 [sources], handle data using [transforms], and then send data off to [sinks].
 
