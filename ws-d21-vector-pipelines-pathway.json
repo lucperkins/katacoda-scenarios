@@ -2,10 +2,10 @@
   "title": "Highly Scalable Observability Data Pipelines with Vector Workshop",
   "courses": [
     {
-      "pathway_id": "datadog",
-      "course_id": "ws-d21-vector-pipelines",
       "id": "ws-d21-vector-pipelines",
-      "title": "Highly Scalable Observability Data Pipelines with Vector Workshop",
+      "course_id": "ws-d21-vector-pipelines",
+      "pathway_id": "datadog/ws-d21-vector-pipelines",
+      "title": "Highly Scalable Observability Data Pipelines with Vector",
       "description": "A hands-on introduction to Vector for Dash 2021"
     }
   ]
