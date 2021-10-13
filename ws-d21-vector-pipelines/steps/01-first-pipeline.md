@@ -11,7 +11,7 @@ Without any further ado, let's start up Vector:
 vector \
   --config-dir /etc/vector/first-pipeline \
   --watch-config vector.toml
-````{{execute}}
+```{{execute}}
 
 **Spoiler alert**: this will initially throw an error that we need to update our Vector
 configuration to fix.
