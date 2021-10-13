@@ -1,0 +1,1 @@
+rm -rf /etc/vector/vector.toml /etc/vector/vector.toml

@@ -5,7 +5,8 @@
   "time": "2.5 hours",
   "details": {
     "intro": {
-      "text": "steps/intro.md"
+      "text": "steps/intro.md",
+      "background": "background.sh"
     },
     "steps": [
       {
@@ -24,11 +25,11 @@
       "host01": [
         {
           "file": "first-pipeline/vector.toml",
-          "target": "/etc/vector/first-pipeline/vector.toml"
+          "target": "/etc/vector/first-pipeline"
         },
         {
           "file": "monitoring-vector/vector.toml",
-          "target": "/etc/vector/monitoring-vector/vector.toml"
+          "target": "/etc/vector/monitoring-vector"
         }
       ]
     }
