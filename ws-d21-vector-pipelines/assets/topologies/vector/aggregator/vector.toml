@@ -16,6 +16,18 @@ store_api_key = false
 type = "fluent"
 address = "0.0.0.0:24224"
 
+[sources.prometheus_node_exporter]
+type = "prometheus_scrape"
+endpoints = ["http://node_exporter:9100/metrics"]
+scrape_interval_secs = 5
+
+[transforms.add_tags_to_metrics]
+type = "remap"
+inputs = ["prometheus_node_exporter"]
+source = '''
+.tags.environment = "production"
+'''
+
 [transforms.logs_router]
 type = "route"
 inputs = ["*_agents"]
@@ -67,8 +79,13 @@ type = "filter"
 inputs = ["parse_and_sanitize_syslog_logs"]
 condition = 'true'
 
-[sinks.json_out]
-type = "console"
+[sinks.datadog_logs]
+type = "datadog_logs"
 inputs = ["filter_*", "parse_and_sanitize_datadog_agent_logs", "parse_and_sanitize_fluent_bit_logs"]
-target = "stdout"
-encoding = { codec = "json" }
+default_api_key = "${DD_API_KEY}"
+compression = "gzip"
+
+[sinks.datadog_metrics]
+type = "datadog_metrics"
+inputs = ["add_tags_to_metrics"]
+api_key = "${DD_API_KEY}"
