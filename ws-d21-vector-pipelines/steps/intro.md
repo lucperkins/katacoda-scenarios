@@ -38,7 +38,7 @@ are illustrated below.
 In the [Aggregator] role, Vector collects data from Agents and/or other Aggregators and can then do a wide variety of
 things with that data:
 
-* Enrich with GeoIP or other data
+* Enrich with GeoIP, CSV, or other info
 * Apply tags and other metadata
 * Parse, decode, encode
 * Filter out data you don't want
@@ -59,6 +59,7 @@ can live close to your log and metric sources with your Aggregators more central
 * Deploying Vector
 * Most Vector components. But please do [browse the components][components] to see what's available.
 * Most Vector Remap Language functions. But make sure to [browse those][vrl_funcs] too.
+* Realistic data sources
 
 And without further ado, let's get started!
 
@@ -66,6 +67,7 @@ And without further ado, let's get started!
 [aggregator]: https://vector.dev/docs/setup/deployment/roles/#aggregator
 [components]: https://vector.dev/components
 [datadog]: https://docs.datadoghq.com/agent
+[fluent]: https://fluentbit.io/
 [logstash]: https://www.elastic.co/logstash
 [roles]: https://vector.dev/docs/setup/deployment/roles
 [sre]: https://en.wikipedia.org/wiki/Site_reliability_engineering

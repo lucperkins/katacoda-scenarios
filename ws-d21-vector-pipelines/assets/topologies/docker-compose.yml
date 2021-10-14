@@ -31,6 +31,12 @@ services:
       - ./logs:/tmp/logs:ro
     depends_on:
       - aggregator
+  # Two Prometheus Node Exporter
+  node_exporter:
+    image: prom/node-exporter:v1.2.2
+    ports:
+      - 9100:9100
+  # Two Fluent Bit agents
   fluentbit_agent:
     image: fluent/fluent-bit:1.8
     deploy:
@@ -39,6 +45,7 @@ services:
       - ./fluent-bit:/fluent-bit/etc:ro
     depends_on:
       - aggregator
+  # The Vector Aggregator
   aggregator:
     container_name: vector_aggregator
     image: timberio/vector:0.17.0-alpine
@@ -64,9 +71,3 @@ services:
     volumes:
       - ./vector/producer:/etc/vector:ro
       - ./logs:/tmp/logs
-  
-  # Prometheus Node Exporter
-  node_exporter:
-    image: prom/node-exporter:v1.2.2
-    ports:
-      - 9100:9100

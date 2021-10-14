@@ -1,0 +1,15 @@
+# Paste in logic from other file here
+
+[sources.vector_logs]
+type = "internal_logs"
+
+[sinks.datadog_logs]
+type = "datadog_logs"
+inputs = ["filter_*", "parse_and_sanitize_datadog_agent_logs", "parse_and_sanitize_fluent_bit_logs"]
+default_api_key = "${DD_API_KEY}"
+compression = "gzip"
+
+[sinks.datadog_metrics]
+type = "datadog_metrics"
+inputs = ["add_tags_to_metrics"]
+api_key = "${DD_API_KEY}"

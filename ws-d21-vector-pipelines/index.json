@@ -103,6 +103,10 @@
         {
           "file": "topologies/fluent-bit/fluent-bit.conf",
           "target": "/etc/vector/topologies/fluent-bit"
+        },
+        {
+          "file": "topologies/vector/aggregator/datadog/vector.toml",
+          "target": "/etc/vector/topologies/vector/aggregator/datadog"
         }
       ]
     }

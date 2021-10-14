@@ -13,6 +13,12 @@ And if you'd like to keep learning:
 * [The Vector Talk channel on YouTube][youtube]
 * [Vector demos][demos]
 
+Some Vector features to look forward to:
+
+* Support for traces
+* Integration with Datadog
+* Major performance and resource usage improvements
+
 Until next time, everyone 💜
 
 [demos]: https://github.com/vectordotdev/vector-demos
