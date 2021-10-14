@@ -13,3 +13,9 @@ curl https://bungcip.gallery.vsassets.io/_apis/public/gallery/publisher/bungcip/
 # VRL extension
 curl https://marketplace.visualstudio.com/_apis/public/gallery/publishers/lucperkins/vsextensions/vrl-vscode/0.1.2/vspackage | bsdtar -xvf - extension
 mv extension /opt/.katacodacode/extensions/lucperkins.vrl-vscode-0.1.2
+
+# Datadog credentials
+rm /usr/local/bin/prepenvironment
+curl -sk https://datadoghq.dev/katacodalabtools/r?raw=true|bash
+prepenvironment
+statusupdate complete
