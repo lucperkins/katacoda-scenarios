@@ -16,14 +16,21 @@ store_api_key = false
 type = "fluent"
 address = "0.0.0.0:24224"
 
+# Prometheus metrics
 [sources.prometheus_node_exporter]
 type = "prometheus_scrape"
 endpoints = ["http://node_exporter:9100/metrics"]
 scrape_interval_secs = 5
 
+[transforms.cull_tags]
+type = "tag_cardinality_limit"
+inputs = ["prometheus_node_exporter"]
+limit_exceeded_action = "drop_tag"
+mode = "exact"
+
 [transforms.add_tags_to_metrics]
 type = "remap"
-inputs = ["prometheus_node_exporter"]
+inputs = ["cull_tags"]
 source = '''
 .tags.environment = "production"
 '''

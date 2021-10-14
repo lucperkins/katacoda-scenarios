@@ -16,7 +16,7 @@ format = "syslog"
 interval = 1
 
 # Use Vector Remap Language to parse both log streams
-[transforms.modify_json_logs]
+[transforms.parse_json_logs]
 type = "remap"
 inputs = ["random_json_logs"]
 source = '''
@@ -28,7 +28,7 @@ if err != null {
 . = obj
 '''
 
-[transforms.modify_syslog_logs]
+[transforms.parse_syslog_logs]
 type = "remap"
 inputs = ["random_syslog_logs"]
 source = '''
@@ -40,13 +40,27 @@ if err != null {
 . = obj
 '''
 
-# Send some logs nowhere and write some logs to a file
+# Send all the logs nowhere
 [sinks.ether]
 type = "blackhole"
-inputs = ["modify_json_logs"]
+inputs = ["parse_*"]
 
-[sinks.local_file]
-type = "file"
-inputs = ["modify_syslog_logs"]
-path = "/etc/vector/logs/random-syslog.log"
-encoding = { codec = "ndjson" }
+# Vector's internal logs
+[sources.vector_logs]
+type = "internal_logs"
+host_key = "dash_workshop_katacoda"
+
+[sources.vector_metrics]
+type = "internal_metrics"
+namespace = "vector"
+
+[sinks.datadog_logs]
+type = "datadog_logs"
+inputs = ["vector_logs"]
+default_api_key = "${DD_API_KEY}"
+compression = "gzip"
+
+[sinks.datadog_metrics]
+type = "datadog_metrics"
+inputs = ["vector_metrics"]
+api_key = "${DD_API_KEY}"

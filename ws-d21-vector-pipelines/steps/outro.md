@@ -10,13 +10,15 @@ And if you'd like to keep learning:
 * [The Vector website][vector]
 * [The Vector documentation][docs]
 * [Vector Remap Language][vrl]
-* [Vector Talk on YouTube][youtube]
+* [The Vector Talk channel on YouTube][youtube]
+* [Vector demos][demos]
 
 Until next time, everyone 💜
 
+[demos]: https://github.com/vectordotdev/vector-demos
 [discord]: https://chat.vector.dev
 [docs]: https://vector.dev/docs
-[github]: https://github.com/vectordotdev/vector
+[github]: https://github.com/vectordotdev
 [twitter]: https://twitter.com/vectordotdev
 [vector]: https://vector.dev
 [vrl]: https://vrl.dev
