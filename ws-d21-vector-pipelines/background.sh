@@ -1,6 +1,9 @@
 # Remove unnecessary stuff that Vector installs automatically
 rm -rf /etc/vector/vector.toml /etc/vector/examples
 
+# Some handy aliases
+alias dc="docker-compose"
+
 # VS Code setup for extensions
 echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections
 cd /tmp && apt-get update -y && apt install libarchive-tools -y
