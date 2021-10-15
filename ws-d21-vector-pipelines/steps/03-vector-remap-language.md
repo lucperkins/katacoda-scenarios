@@ -4,15 +4,23 @@ external sources, removing unnecessary information, redacting sensitive info, an
 
 In Vector, you'll primarily remap your logs and metrics using a DSL called **Vector Remap Language**
 (VRL for short). VRL is a non-Turing-complete language that's built specifically for observability
-use cases. It has a simple syntax reminiscent of 
+use cases. It has a simple syntax reminiscent of [jq] and a broad [standard library][vrl_funcs] of
+functions.
 
-## Ad hoc experimentation in the REPL
+## Working with VRL in the REPL
 
 First, let's experiment in the VRL REPL, which opens up if you run the Vector CLI's `vrl` command
 with no arguments:
 
 `vector vrl`{{execute interrupt}}
 
+## Handling real events
+
+Once we've gotten a taste of the language in the REPL, let's work with some real observability events:
+
 ```
 vector vrl --input /etc/vector/vrl/events.jsonl
 ```{{execute interrupt}}
+
+[jq]: https://stedolan.github.io/jq
+[vrl_funcs]: https://vrl.dev/functions
