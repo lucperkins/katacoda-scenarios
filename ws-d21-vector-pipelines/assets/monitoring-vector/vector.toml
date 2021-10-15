@@ -50,15 +50,16 @@ inputs = ["parse_*"]
 type = "internal_logs"
 host_key = "dash_workshop_katacoda"
 
-[sources.vector_metrics]
-type = "internal_metrics"
-namespace = "vector"
-
 [sinks.datadog_logs]
 type = "datadog_logs"
 inputs = ["vector_logs"]
 default_api_key = "${DD_API_KEY}"
 compression = "gzip"
+
+# Vector's internal metrics
+[sources.vector_metrics]
+type = "internal_metrics"
+namespace = "vector"
 
 [sinks.datadog_metrics]
 type = "datadog_metrics"

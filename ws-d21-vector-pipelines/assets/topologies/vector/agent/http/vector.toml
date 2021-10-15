@@ -1,7 +1,7 @@
 [sources.random_http_logs]
 type = "generator"
-format = "json"
-interval = 2
+format = "shuffle"
+interval = 1
 
 [transforms.tag]
 type = "remap"

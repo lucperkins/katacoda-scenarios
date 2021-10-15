@@ -3,6 +3,16 @@
 enabled = true
 address = "0.0.0.0:8686"
 
+# Aggregator internal logs
+[sources.vector_logs]
+type = "internal_logs"
+host_key = "dash_workshop_katacoda"
+
+# Aggregator internal metrics
+[sources.vector_metrics]
+type = "internal_metrics"
+namespace = "vector"
+
 ## Log sources
 [sources.vector_agents]
 type = "vector"
@@ -35,11 +45,15 @@ apache_common_logs = 'true'
 
 # Parse Apache Common logs (and modify)
 
+## Redact
+
+# Apply redaction to sensitive logs
+
 ## Filters
 
 # Filter out OPTION and HEAD requests
 
-# Filter out non-urgent logs
+# Filter out non-urgent Syslog logs (notice, informational, debug)
 
 # Pipe everything to the console
 [sinks.console_out]
