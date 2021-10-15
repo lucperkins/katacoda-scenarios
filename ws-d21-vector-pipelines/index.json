@@ -29,6 +29,10 @@
       {
         "title": "Vector as an Aggregator",
         "text": "steps/05-vector-aggregator.md"
+      },
+      {
+        "title": "Using our Aggregator with Datadog",
+        "text": "steps/06-datadog-integration.md"
       }
     ],
     "finish": {

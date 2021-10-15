@@ -96,8 +96,8 @@ source = '''
 .tags.aggregator = get_hostname!()
 '''
 
-# Send to another aggregator
+# Send to another Vector Aggregator!
 #[sinks.downstream_aggregator]
 #type = "vector"
-#inputs = ["filter_*", "parse_and_sanitize_datadog_agent_logs", "parse_and_sanitize_fluent_bit_logs", "add_tags_to_metrics]
-#ddress = "downstream_aggregator:6000"
+#inputs = ["logs_*", "metrics_*"]
+#address = "downstream_aggregator:6000"
