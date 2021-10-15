@@ -4,4 +4,4 @@ logs:
     service: "datadog-agent"
     source: "file"
     tags:
-      - tag:datadog_agent_logs
+      - type: apache_common

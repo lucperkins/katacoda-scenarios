@@ -1,6 +1,6 @@
 [sources.random]
 type = "generator"
-format = "json"
+format = "apache_common"
 interval = 1
 
 [sinks.file]

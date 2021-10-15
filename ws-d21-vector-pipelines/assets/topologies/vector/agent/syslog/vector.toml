@@ -7,7 +7,7 @@ interval = 2
 type = "remap"
 inputs = ["random_syslog_logs"]
 source = '''
-.tag = "syslog_logs"
+.tags.type = "syslog"
 '''
 
 [sinks.aggregator]

@@ -3,7 +3,7 @@
 enabled = true
 address = "0.0.0.0:8686"
 
-# Logs
+## Log sources
 [sources.vector_agents]
 type = "vector"
 address = "0.0.0.0:9000"
@@ -25,79 +25,34 @@ inputs = ["*_agents"]
 [transforms.logs_router.route]
 http_logs = 'true'
 syslog_logs = 'true'
-datadog_agent_logs = 'true'
-fluent_bit_logs = 'true'
+apache_common_logs = 'true'
 
-[transforms.parse_and_sanitize_http_logs]
-type = "remap"
-inputs = ["logs_router.http_logs"]
-source = '''
-.
-'''
+## Remap
 
-# Convert Syslog logs to JSON objects
-[transforms.parse_and_sanitize_syslog_logs]
-type = "remap"
-inputs = ["logs_router.syslog_logs"]
-source = '''
-.
-'''
+# Parse HTTP logs into JSON (and modify)
 
-[transforms.parse_and_sanitize_datadog_agent_logs]
-type = "remap"
-inputs = ["logs_router.datadog_agent_logs"]
-source = '''
-.
-'''
+# Parse Syslog logs (and modify)
 
-[transforms.parse_and_sanitize_fluent_bit_logs]
-type = "remap"
-inputs = ["logs_router.fluent_bit_logs"]
-source = '''
-.
-'''
+# Parse Apache Common logs (and modify)
+
+## Filters
 
 # Filter out OPTION and HEAD requests
-[transforms.filter_http_logs]
-type = "filter"
-inputs = ["parse_and_sanitize_http_logs"]
-condition = 'true'
 
 # Filter out non-urgent logs
-[transforms.filter_syslog_logs]
-type = "filter"
-inputs = ["parse_and_sanitize_syslog_logs"]
-condition = 'true'
 
 # Pipe everything to the console
 [sinks.console_out]
 type = "console"
-inputs = ["filter_*", "parse_and_sanitize_datadog_agent_logs", "parse_and_sanitize_fluent_bit_logs"]
+inputs = ["*"]
 target = "stdout"
 encoding = { codec = "json" }
 
-# Prometheus metrics
-[sources.prometheus_node_exporter]
-type = "prometheus_scrape"
-endpoints = ["http://node_exporter:9100/metrics"]
-scrape_interval_secs = 5
+## Metrics transforms
+# Limit tag cardinality
 
-[transforms.cull_tags]
-type = "tag_cardinality_limit"
-inputs = ["prometheus_node_exporter"]
-limit_exceeded_action = "drop_tag"
-mode = "exact"
+# Add tags
 
-[transforms.add_tags_to_metrics]
-type = "remap"
-inputs = ["cull_tags"]
-source = '''
-.tags.environment = "production"
-.tags.aggregator = get_hostname!()
-'''
+## BONUS
 
 # Send to another Vector Aggregator!
-#[sinks.downstream_aggregator]
-#type = "vector"
-#inputs = ["logs_*", "metrics_*"]
-#address = "downstream_aggregator:6000"
