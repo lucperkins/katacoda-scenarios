@@ -57,6 +57,13 @@ encoding = { codec = "json" }
 
 # Add tags
 
+
+## Destinations
+
+# Send some logs to S3
+
+# Send some other logs to Splunk
+
 ## BONUS
 
 # Send to another Vector Aggregator!
