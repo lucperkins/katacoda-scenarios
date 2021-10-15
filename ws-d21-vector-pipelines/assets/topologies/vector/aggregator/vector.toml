@@ -3,16 +3,6 @@
 enabled = true
 address = "0.0.0.0:8686"
 
-# Aggregator internal logs
-[sources.vector_logs]
-type = "internal_logs"
-host_key = "dash_workshop_katacoda"
-
-# Aggregator internal metrics
-[sources.vector_metrics]
-type = "internal_metrics"
-namespace = "vector"
-
 ## Log sources
 [sources.vector_agents]
 type = "vector"
@@ -70,3 +60,21 @@ encoding = { codec = "json" }
 ## BONUS
 
 # Send to another Vector Aggregator!
+
+# Aggregator internal logs
+[sources.vector_logs]
+type = "internal_logs"
+host_key = "dash_workshop_katacoda"
+
+[sinks.logs_to_nowhere]
+type = "blackhole"
+inputs = ["vector_logs"]
+
+# Aggregator internal metrics
+[sources.vector_metrics]
+type = "internal_metrics"
+namespace = "vector"
+
+[sinks.metrics_to_nowhere]
+type = "blackhole"
+inputs = ["vector_metrics"]
