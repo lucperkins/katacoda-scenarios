@@ -1,5 +1,10 @@
 And that's a wrap! Thank you so much for taking part in Highly Scalable Observability Pipelines with
-Vector. If you want to know more, please do stay in touch:
+Vector. I think we accomplished a great deal today. We learned the basics of configuring Vector
+pipelines, we got a taste of Vector Remap Language, 
+
+## Community
+
+If you want to know more, please do stay in touch:
 
 * [Discord]
 * [Twitter]

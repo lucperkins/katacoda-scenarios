@@ -1,11 +1,15 @@
-And now we get to the centerpiece of this workshop, which is working with a Vector Aggregator. We're going to do a lot
-of heavy lifting in this Aggregator. We'll take in data from multiple sources:
+And now we get to the centerpiece of this workshop: working with a Vector Aggregator. We're going to do a lot of heavy
+lifting in this Aggregator. First, we'll take in observability data from multiple sources:
 
 * Vector Agents collecting HTTP server logs
 * Vector Agents collecting Syslog logs
 * [Datadog Agents][datadog] collecting HTTP server logs
 * [Fluent Bit][fluent] agents collecting logs
-* [Prometheus] [Node Exporters][node_exporter] emitting host metrics
+* [Prometheus][prometheus] [Node Exporters][node_exporter] emitting host metrics
+
+And we'll have all kinds of fun with that data. We'll route it, filter it, and modify it.
+
+Let's start up this scenario right now:
 
 ```
 docker-compose \
@@ -13,6 +17,9 @@ docker-compose \
 up \
 --detach
 ```{{execute interrupt}}
+
+And then let's navigate to `/etc/vector/topologies/docker-compose.yml`{{open}} in our editor to get a sense of the
+structure of this Agent/Aggregator topology.
 
 ## Monitoring Aggregators
 
@@ -22,4 +29,5 @@ explore.
 
 [datadog]: https://docs.datadoghq.com/agent
 [fluent]: https://fluentbit.io
+[node_exporter]: https://github.com/prometheus/node_exporter
 [prometheus]: https://prometheus.io
