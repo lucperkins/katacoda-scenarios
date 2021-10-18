@@ -8,12 +8,12 @@ playground = true
 [sources.random_json_logs]
 type = "generator"
 format = "json"
-interval = 1
+interval = 2
 
 [sources.random_syslog_logs]
 type = "generator"
 format = "syslog"
-interval = 1
+interval = 2
 
 # Use Vector Remap Language to parse both log streams
 [transforms.parse_json_logs]

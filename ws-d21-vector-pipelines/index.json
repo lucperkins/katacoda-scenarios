@@ -19,20 +19,16 @@
         "text": "steps/02-first-pipeline.md"
       },
       {
-        "title": "Monitoring Vector with vector tap and vector top",
-        "text": "steps/02-monitoring-vector.md"
-      },
-      {
         "title": "Vector Remap Language",
         "text": "steps/03-vector-remap-language.md"
       },
       {
-        "title": "Unit testing Vector transforms",
-        "text": "steps/04-unit-testing.md"
+        "title": "Vector as an Aggregator",
+        "text": "steps/04-vector-aggregator.md"
       },
       {
-        "title": "Vector as an Aggregator",
-        "text": "steps/05-vector-aggregator.md"
+        "title": "Unit testing Vector transforms",
+        "text": "steps/05-unit-testing.md"
       },
       {
         "title": "Using our Aggregator with Datadog",
