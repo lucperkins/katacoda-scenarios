@@ -29,9 +29,13 @@ vector \
 This command will initially throw an error. But don't fret! We'll fix that by updating our Vector
 configuration.
 
-## Multiple sources and sinks
+First, let's add a `generator` source:
 
-Once we've run our first simple pipeline, we'll build a pipeline with multiple sources and sinks.
+<pre class="file" data-filename="first-pipeline/vector.toml" data-target="insert" data-marker="#generator-insert">[sources.random_json_logs]
+type = "generator"
+format = "json"
+interval = 1
+</pre>
 
 [console]: https://vector.dev/docs/reference/configuration/sinks/console
 [generator]: https://vector.dev/docs/reference/configuration/sources/generator

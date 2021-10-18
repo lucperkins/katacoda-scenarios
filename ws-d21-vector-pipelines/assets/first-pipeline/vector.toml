@@ -3,8 +3,4 @@
 enabled = true
 address = "127.0.0.1:8686"
 
-# Insert source(s)
-
-# Insert transform(s)
-
-# Insert sink(s)
+#generator-insert
