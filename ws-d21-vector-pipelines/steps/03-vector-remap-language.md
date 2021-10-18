@@ -10,6 +10,8 @@ In Vector, you'll primarily remap your logs and metrics using a DSL called **Vec
 use cases. It has a simple syntax reminiscent of [jq] and a broad [standard library][vrl_funcs] of
 functions.
 
+Here's what VRL looks like in a Vector configuration:
+
 ## Working with VRL in the REPL
 
 First, let's experiment with VRL in its REPL. We can open that up using the Vector CLI's
@@ -17,20 +19,35 @@ First, let's experiment with VRL in its REPL. We can open that up using the Vect
 
 `vector vrl`{{execute interrupt}}
 
-## VRL's core
+Some helpers while we're in the REPL:
+
+* `help`{{execute}} for a help menu
+* `help functions`{{execute}} to list available VRL functions
+* `help docs <func>` to see info about a function, e.g. `help docs del`{{execute}}
+* `next`{{execute}} and `prev`{{execute}} to navigate between events
+
+## VRL programs
+
+
+
+
+## The core of VRL
 
 ### Paths and assignment
+
+In VRL, the dot (`.`) represents
 
 ### Data types
 
 VRL has a handful of core data types:
 
-* Strings: `"hello \"world\""`{{copy}} or `s'{"hello":"world"}'`{{execute}}
-* Integers: `0`, `404`, `1_000_000`
-* Floats: `2.5`, `0.0001`
-* Booleans: `true` and `false`
+* Strings: `"hello \"world\""`{{execute}} or `s'{"hello":"world"}'`{{execute}}
+* Integers: `0`{{execute}}, `404`{{execute}}, `1_000_000`{{execute}}
+* Floats: `2.5`{{execute}}, `0.0001`{{execute}}
+* Booleans: `true`{{execute}} and `false`{{execute}}
 * Null: `null`
-* Objects: `{"code": 200}` or `{"user":{"username":"dash-workshop-1337"}}`{{execute}}
+* Objects: `{"code": 200}`{{execute}}, `{"user":{"username":"dash-workshop-1337"}}`{{execute}} (nested)
+* Arrays: `[1, 2, 3]`{{execute}}, `[1, true, {}, [3, 2, 1]]`{{execute}}
 
 ### Functions
 
