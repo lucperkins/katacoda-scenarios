@@ -1,10 +1,9 @@
-Vector thinks about observability data in terms of **pipelines**. Pipelines involve three different
-types of **components**. [Sources] take in data, [transforms] handle that data (modify it, filter
-it, route it, and more), and [sinks] send that data off somewhere else, such as to a database like
-Clickhouse, a cloud storage system like AWS S3, a [Kafka] topic, a file in the filesystem, a
-service like Datadog, etc.
+Now let's create and run a simple Vector pipeline with these components:
 
-## One source, one sink, done
+* A [`generator`][generator] source that generates
+
+> The goal of this very basic pipeline is to 
+
 
 Let's kick off the practical portion of this workshop by building our own very simple pipeline using
 the [`generator`][generator] source, the [`remap`][remap] transform and [Vector Remap
@@ -15,6 +14,9 @@ First, let's make sure Vector is installed in our environment:
 ```
 vector --version
 ```{{execute}}
+
+You *should* see some version information pop up. If not, please do notify me in the chat and a TA
+will assist you ASAP.
 
 Without any further ado, let's start up Vector:
 

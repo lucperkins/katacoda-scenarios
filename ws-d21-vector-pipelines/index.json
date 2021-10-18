@@ -11,8 +11,12 @@
     },
     "steps": [
       {
-        "title": "Our first processing pipeline with Vector",
-        "text": "steps/01-first-pipeline.md"
+        "title": "Our workshop environment",
+        "text": "steps/01-environment.md"
+      },
+      {
+        "title": "Our first Vector pipeline",
+        "text": "steps/02-first-pipeline.md"
       },
       {
         "title": "Monitoring Vector with vector tap and vector top",
