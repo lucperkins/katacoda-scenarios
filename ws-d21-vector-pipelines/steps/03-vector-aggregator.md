@@ -11,8 +11,6 @@ an empty configuration file for our Aggregator.
 
 ## Sources
 
-
-
 <pre class="file" data-filename="first-pipeline/vector.toml" data-target="insert" data-marker="#insert-vector-agents">[transforms.handle]
 type = "remap"                # This transform lets us use Vector Remap Language
 inputs = ["random_json_logs"] # Tells our transform where to listen for input

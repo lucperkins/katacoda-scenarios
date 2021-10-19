@@ -11,28 +11,24 @@
     },
     "steps": [
       {
-        "title": "Our workshop environment",
-        "text": "steps/01-environment.md"
-      },
-      {
         "title": "Our first Vector pipeline",
-        "text": "steps/02-first-pipeline.md"
+        "text": "steps/01-first-pipeline.md"
       },
       {
         "title": "Vector Remap Language",
-        "text": "steps/03-vector-remap-language.md"
+        "text": "steps/02-vector-remap-language.md"
       },
       {
         "title": "Vector as an Aggregator",
-        "text": "steps/04-vector-aggregator.md"
+        "text": "steps/03-vector-aggregator.md"
       },
       {
-        "title": "Unit testing Vector transforms",
-        "text": "steps/05-unit-testing.md"
+        "title": "Monitoring Vector",
+        "text": "steps/04-unit-testing.md"
       },
       {
-        "title": "Using our Aggregator with Datadog",
-        "text": "steps/06-datadog-integration.md"
+        "title": "Configuring a Vector Aggregator",
+        "text": "steps/05-datadog-integration.md"
       }
     ],
     "finish": {

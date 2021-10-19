@@ -17,7 +17,7 @@ address = "0.0.0.0:8686"
 Let's restart Vector
 
 ```
-docker-compose restart 
+docker-compose restart aggregator
 ```{{execute interrupt}}
 
 ## vector tap
