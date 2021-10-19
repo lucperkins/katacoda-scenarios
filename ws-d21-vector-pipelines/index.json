@@ -12,23 +12,31 @@
     "steps": [
       {
         "title": "Our first Vector pipeline",
-        "text": "steps/01-first-pipeline.md"
+        "text": "steps/1-first-pipeline.md"
       },
       {
         "title": "Vector Remap Language",
-        "text": "steps/02-vector-remap-language.md"
+        "text": "steps/2-vector-remap-language.md"
+      },
+      {
+        "title": "VRL programs",
+        "text": "steps/2.1-vrl-programs.md"
+      },
+      {
+        "title": "The VRL REPL",
+        "text": "steps/2.2-vrl-repl.md"
       },
       {
         "title": "Vector as an Aggregator",
-        "text": "steps/03-vector-aggregator.md"
+        "text": "steps/3-vector-aggregator.md"
       },
       {
         "title": "Monitoring Vector",
-        "text": "steps/04-unit-testing.md"
+        "text": "steps/4-unit-testing.md"
       },
       {
         "title": "Configuring a Vector Aggregator",
-        "text": "steps/05-datadog-integration.md"
+        "text": "steps/5-datadog-integration.md"
       }
     ],
     "finish": {

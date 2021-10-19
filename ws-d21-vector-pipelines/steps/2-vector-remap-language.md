@@ -12,32 +12,23 @@ functions.
 
 Here's what VRL looks like in a Vector configuration:
 
-## Working with VRL in the REPL
+```toml
+[transforms.modify_data]
+type = "remap"
+inputs = ["my_logs"]
+source = '''
 
-First, let's experiment with VRL in its REPL. We can open that up using the Vector CLI's
-[`vrl`][vrl_cmd] command with no arguments:
-
-`vector vrl`{{execute interrupt}}
-
-Some helpers while we're in the REPL:
-
-* `help`{{execute}} for a help menu
-* `help functions`{{execute}} to list available VRL functions
-* `next`{{execute}} and `prev`{{execute}} to navigate between events
-
-## VRL programs
-
-As we saw in the last section, VRL **programs** are run by Vector inside of transforms. Programs
-take in one single observability event at a time, do something with it, and then output the
-resulting event to the next component (maybe a sink, maybe another transform). Here's a full example
-program to run in our REPL:
-
+'''
 ```
-. = { "method": "POST", "status": 200, "path": "/users" }
-.method = downcase(.method)
-.
-```{{execute}}
 
+Alternatively, you can write VRL in separate files:
+
+```toml
+[transforms.modify_data]
+type = "remap"
+inputs = ["my_logs"]
+file = "/etc/vector/vrl/modify.vrl"
+```
 
 ## The core of VRL
 
