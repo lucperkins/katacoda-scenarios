@@ -1,9 +1,7 @@
-# Global config
-[api]
-enabled = true
-address = "0.0.0.0:8686"
-
 ## Log sources
+
+# insert-vector-agents
+
 [sources.vector_agents]
 type = "vector"
 address = "0.0.0.0:9000"
@@ -85,3 +83,5 @@ namespace = "vector"
 [sinks.metrics_to_nowhere]
 type = "blackhole"
 inputs = ["vector_metrics"]
+
+# api-config-insert

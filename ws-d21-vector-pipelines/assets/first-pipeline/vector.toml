@@ -1,10 +1,5 @@
-# Enable Vector's GraphQL API, which in turn enables several features
-[api]
-enabled = true
-address = "127.0.0.1:8686"
+#insert-source
 
-#source-insert
+#insert-transform
 
-#transform-insert
-
-#sink-insert
+#insert-sink

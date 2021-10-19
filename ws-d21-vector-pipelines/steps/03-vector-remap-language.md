@@ -23,12 +23,20 @@ Some helpers while we're in the REPL:
 
 * `help`{{execute}} for a help menu
 * `help functions`{{execute}} to list available VRL functions
-* `help docs <func>` to see info about a function, e.g. `help docs del`{{execute}}
 * `next`{{execute}} and `prev`{{execute}} to navigate between events
 
 ## VRL programs
 
+As we saw in the last section, VRL **programs** are run by Vector inside of transforms. Programs
+take in one single observability event at a time, do something with it, and then output the
+resulting event to the next component (maybe a sink, maybe another transform). Here's a full example
+program to run in our REPL:
 
+```
+. = { "method": "POST", "status": 200, "path": "/users" }
+.method = downcase(.method)
+.
+```{{execute}}
 
 
 ## The core of VRL
@@ -51,12 +59,17 @@ VRL has a handful of core data types:
 
 ### Functions
 
-VRL has over 100 functions, which is more than we could hope to cover today. But we can see
-representative functions from a few main categories:
+VRL has over 100 functions, which is more than we could hope to cover today. But we can still
+explore representative functions from a few main categories:
 
-* Parsing: `parse_json!(s'{"status":404}')`{{copy}}
-* Encoding: `encode_json({"status": 404})`{{copy}}
-* Timestamps: `format_timestamp!(now(), format: "%+")`
+* Parsing: `parse_json!(s'{"status":404}')`{{execute}}
+* Encoding: `encode_base64("hello world")`{{execute}}
+* Timestamps: `format_timestamp!(now(), format: "%+")`{{execute}}
+* Random: `uuid_v4()`{{execute}}
+* Array: `push([1, 2], 3)`{{execute}}
+* Platform-specific functions: `parse_aws_vpc_flow_log!("2 123456789010 eni-1235b8ca123456789 - - - - - - - 1431280876 1431280934 - NODATA")`{{execute}}
+
+### Error handling
 
 ## Handling real events
 

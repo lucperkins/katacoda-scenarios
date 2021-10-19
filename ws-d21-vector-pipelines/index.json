@@ -73,44 +73,44 @@
           "target": "/etc/vector/unit-testing"
         },
         {
-          "file": "topologies/docker-compose.yml",
-          "target": "/etc/vector/topologies"
+          "file": "aggregator/docker-compose.yml",
+          "target": "/etc/vector/aggregator"
         },
         {
-          "file": "topologies/logs/.gitkeep",
-          "target": "/etc/vector/topologies/logs"
+          "file": "aggregator/logs/.gitkeep",
+          "target": "/etc/vector/aggregator/logs"
         },
         {
-          "file": "topologies/vector/aggregator/vector.toml",
-          "target": "/etc/vector/topologies/vector/aggregator"
+          "file": "aggregator/vector/aggregator/vector.toml",
+          "target": "/etc/vector/aggregator/vector/aggregator"
         },
         {
-          "file": "topologies/vector/agent/http/vector.toml",
-          "target": "/etc/vector/topologies/vector/agent/http"
+          "file": "aggregator/vector/agent/http/vector.toml",
+          "target": "/etc/vector/aggregator/vector/agent/http"
         },
         {
-          "file": "topologies/vector/agent/syslog/vector.toml",
-          "target": "/etc/vector/topologies/vector/agent/syslog"
+          "file": "aggregator/vector/agent/syslog/vector.toml",
+          "target": "/etc/vector/aggregator/vector/agent/syslog"
         },
         {
-          "file": "topologies/vector/producer/vector.toml",
-          "target": "/etc/vector/topologies/vector/producer"
+          "file": "aggregator/vector/producer/vector.toml",
+          "target": "/etc/vector/aggregator/vector/producer"
         },
         {
-          "file": "topologies/datadog/datadog.yaml",
-          "target": "/etc/vector/topologies/datadog"
+          "file": "aggregator/datadog/datadog.yaml",
+          "target": "/etc/vector/aggregator/datadog"
         },
         {
-          "file": "topologies/datadog/conf.d/test.d/conf.yaml",
-          "target": "/etc/vector/topologies/datadog/conf.d/test.d"
+          "file": "aggregator/datadog/conf.d/test.d/conf.yaml",
+          "target": "/etc/vector/aggregator/datadog/conf.d/test.d"
         },
         {
-          "file": "topologies/fluent-bit/fluent-bit.conf",
-          "target": "/etc/vector/topologies/fluent-bit"
+          "file": "aggregator/fluent-bit/fluent-bit.conf",
+          "target": "/etc/vector/aggregator/fluent-bit"
         },
         {
-          "file": "topologies/vector/aggregator/datadog/vector.toml",
-          "target": "/etc/vector/topologies/vector/aggregator/datadog"
+          "file": "aggregator/vector/aggregator/datadog/vector.toml",
+          "target": "/etc/vector/aggregator/vector/aggregator/datadog"
         }
       ]
     }
