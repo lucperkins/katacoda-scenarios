@@ -1,6 +1,10 @@
 # Remove unnecessary stuff that Vector installs automatically
 rm -rf /etc/vector/vector.toml /etc/vector/examples
 
+# Set environment variables
+export REGION="us-west-az-1"
+export AGGREGATOR="vector-agg-3"
+
 # Some handy aliases
 alias dc="docker-compose"
 
