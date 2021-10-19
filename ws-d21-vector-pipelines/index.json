@@ -27,6 +27,26 @@
         "text": "steps/2.2-vrl-repl.md"
       },
       {
+        "title": "Paths and the dot syntax",
+        "text": "steps/2.3-vrl-paths.md"
+      },
+      {
+        "title": "VRL's data types",
+        "text": "steps/2.4-types.md"
+      },
+      {
+        "title": "VRL functions",
+        "text": "steps/2.5-vrl-functions.md"
+      },
+      {
+        "title": "Error handling in VRL",
+        "text": "steps/2.6-vrl-errors.md"
+      },
+      {
+        "title": "Working with real events",
+        "text": "steps/2.7-vrl-events.md"
+      },
+      {
         "title": "Vector as an Aggregator",
         "text": "steps/3-vector-aggregator.md"
       },
