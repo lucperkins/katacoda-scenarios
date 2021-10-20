@@ -35,16 +35,20 @@
         "text": "steps/2.4-types.md"
       },
       {
+        "title": "VRL variables",
+        "text": "steps/2.5-vrl-variables.md"
+      },
+      {
         "title": "VRL functions",
-        "text": "steps/2.5-vrl-functions.md"
+        "text": "steps/2.6-vrl-functions.md"
       },
       {
         "title": "Error handling in VRL",
-        "text": "steps/2.6-vrl-errors.md"
+        "text": "steps/2.7-vrl-errors.md"
       },
       {
         "title": "Working with real events",
-        "text": "steps/2.7-vrl-events.md"
+        "text": "steps/2.8-vrl-events.md"
       },
       {
         "title": "Vector as an Aggregator",
