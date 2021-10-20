@@ -1,7 +1,8 @@
 Vector enables you to [unit test][test] the transforms in your observability data pipelines. The goal of unit testing
 in Vector is exactly the same as in programming languages: you want to ensure that transforms produce the outcome you
 expect from known inputs that you provide. You can test just a single transform or a series of transforms chained
-together (which is a bit like testing a single transform if you think about it).
+together (which is a bit like testing a single transform if you think about it). The more complex your pipelines, the
+more crucial unit testing becomes in eliminating
 
 To run unit tests, you need to specify a few things:
 

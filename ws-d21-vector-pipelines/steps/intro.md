@@ -19,5 +19,14 @@ you out ASAP.
 
 **Exercise**: Run `vector --help` to familiarize yourself with Vector's CLI.
 
+## Core goals of this workshop
+
+* Learn the basics of [Vector Remap Language][vrl] (VRL), Vector's built-in DSL for observability
+  data
+* How to build configure observability pipelines with Vector
+* How to monitor Vector itself using a variety of tools
+* How to unit test Vector transforms to ensure that they behave as we'd expect inside of our pipelines
+
 [vector]: https://vector.dev
+[vrl]: https://vrl.dev
 [vscode]: https://code.visualstudio.com
