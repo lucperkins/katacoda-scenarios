@@ -1,17 +1,8 @@
 ## Log sources
 
-# insert-vector-agents
+# insert-vector-agent-source
 
-
-
-[sources.datadog_agents]
-type = "datadog_agent"
-address = "0.0.0.0:8080"
-store_api_key = false
-
-[sources.fluent_bit_agents]
-type = "fluent"
-address = "0.0.0.0:24224"
+# insert-datadog-agent-source
 
 [transforms.logs_router]
 type = "route"

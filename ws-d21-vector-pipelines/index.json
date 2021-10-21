@@ -67,6 +67,14 @@
         "text": "steps/3.2-aggregator-sources.md"
       },
       {
+        "title": "Configuring a temporary sink",
+        "text": "steps/3.4-aggregator-sink.md"
+      },
+      {
+        "title": "Running the Aggregator",
+        "text": "steps/3.5-aggregator-run.md"
+      },
+      {
         "title": "Monitoring Vector",
         "text": "steps/4-monitoring-vector.md"
       },
