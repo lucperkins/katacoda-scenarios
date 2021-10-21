@@ -64,7 +64,11 @@
       },
       {
         "title": "Monitoring Vector",
-        "text": "steps/4-unit-testing.md"
+        "text": "steps/4-monitoring-vector.md"
+      },
+      {
+        "title": "Unit testing Vector transforms",
+        "text": "steps/5-unit-testing.md"
       }
     ],
     "finish": {
