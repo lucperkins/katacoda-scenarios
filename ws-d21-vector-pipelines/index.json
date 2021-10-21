@@ -32,7 +32,7 @@
       },
       {
         "title": "VRL's data types",
-        "text": "steps/2.4-types.md"
+        "text": "steps/2.4-vrl-types.md"
       },
       {
         "title": "VRL variables",
@@ -55,12 +55,16 @@
         "text": "steps/3-vector-aggregator.md"
       },
       {
-        "title": "Monitoring Vector",
-        "text": "steps/4-unit-testing.md"
+        "title": "The agents in our pipeline",
+        "text": "steps/3.1-agents.md"
       },
       {
-        "title": "Configuring a Vector Aggregator",
-        "text": "steps/5-datadog-integration.md"
+        "title": "Configuring sources",
+        "text": "steps/3.2-sources.md"
+      },
+      {
+        "title": "Monitoring Vector",
+        "text": "steps/4-unit-testing.md"
       }
     ],
     "finish": {
@@ -68,6 +72,10 @@
     },
     "assets": {
       "host01": [
+        {
+          "file": "Makefile",
+          "target": "/etc/vector"
+        },
         {
           "file": "logs/.gitkeep",
           "target": "/etc/vector/logs"
@@ -113,12 +121,8 @@
           "target": "/etc/vector/aggregator/vector/aggregator"
         },
         {
-          "file": "aggregator/vector/agent/http/vector.toml",
-          "target": "/etc/vector/aggregator/vector/agent/http"
-        },
-        {
-          "file": "aggregator/vector/agent/syslog/vector.toml",
-          "target": "/etc/vector/aggregator/vector/agent/syslog"
+          "file": "aggregator/vector/agent/vector.toml",
+          "target": "/etc/vector/aggregator/vector/agent"
         },
         {
           "file": "aggregator/vector/producer/vector.toml",

@@ -1,23 +1,25 @@
-Now that we know the basics of working with Vector, it's time to work with a Vector Aggregator. In
+Now that we've learned some basics of working with Vector, it's time to work with a Vector Aggregator. In
 this scenario, we'll have multiple observability agents that send data to our Aggregator:
 
 * Vector Agents collecting HTTP server logs
 * [Datadog Agents][datadog] collecting HTTP server logs
 * [Fluent Bit][fluent] agents collecting logs
-* [Prometheus][prometheus] [Node Exporters][node_exporter] emitting host metrics
+
+These agents will all be sending logs. Our Aggregator will also be handling metrics emitted by
+[Prometheus][prometheus] [Node Exporters][node_exporter].
 
 If you open up the `/etc/vector/aggregator/vector/aggregator/vector.toml`{{open}} file, you'll see
 an empty configuration file for our Aggregator.
 
 ## Sources
 
-<pre class="file" data-filename="first-pipeline/vector.toml" data-target="insert" data-marker="#insert-vector-agents">[transforms.handle]
-type = "remap"                # This transform lets us use Vector Remap Language
-inputs = ["random_json_logs"] # Tells our transform where to listen for input
+With our agents already configured to send data to our Aggregator, we need to configure the
+Aggregator to use those agents as sources. We can start with our Vector Agent:
 
-# Our first VRL program
-source = '''
-.
+<pre class="file" data-filename="first-pipeline/vector.toml" data-target="insert" data-marker="#insert-vector-agents">[sources.vector_agents]
+type = "vector"
+address = "0.0.0.0:9000"
+version = "2"
 '''</pre>
 
 Let's start up this scenario right now:

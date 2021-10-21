@@ -2,10 +2,7 @@
 
 # insert-vector-agents
 
-[sources.vector_agents]
-type = "vector"
-address = "0.0.0.0:9000"
-version = "2"
+
 
 [sources.datadog_agents]
 type = "datadog_agent"
