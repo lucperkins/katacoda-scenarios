@@ -1,30 +1,21 @@
-Now that we've learned some basics of working with Vector, it's time to work with a Vector Aggregator. In
-this scenario, we'll have multiple observability agents that send data to our Aggregator:
+Now that we've learned some basics of working with Vector, it's time to work
+with a Vector Aggregator. In this scenario, we'll have multiple observability
+agents that send data to our Aggregator:
 
-* Vector Agents collecting HTTP server logs
-* [Datadog Agents][datadog] collecting HTTP server logs
-* [Fluent Bit][fluent] agents collecting logs
+- Vector Agents collecting HTTP server logs
+- [Datadog Agents][datadog] collecting HTTP server logs
+- [Fluent Bit][fluent] agents collecting logs
 
-These agents will all be sending logs. Our Aggregator will also be handling metrics emitted by
-[Prometheus][prometheus] [Node Exporters][node_exporter].
+These agents will all be sending logs. Our Aggregator will also be handling
+metrics emitted by [Prometheus][prometheus] [Node Exporters][node_exporter].
 
-If you open up the `/etc/vector/aggregator/vector/aggregator/vector.toml`{{open}} file, you'll see
+If you open up the
+`/etc/vector/aggregator/vector/aggregator/vector.toml`{{open}} file, you'll see
 an empty configuration file for our Aggregator.
-
-## Sources
-
-With our agents already configured to send data to our Aggregator, we need to configure the
-Aggregator to use those agents as sources. We can start with our Vector Agent:
-
-<pre class="file" data-filename="first-pipeline/vector.toml" data-target="insert" data-marker="#insert-vector-agents">[sources.vector_agents]
-type = "vector"
-address = "0.0.0.0:9000"
-version = "2"
-'''</pre>
 
 Let's start up this scenario right now:
 
-```
+````
 docker-compose \
 --file /etc/vector/topologies/docker-compose.yml \
 up \
@@ -44,3 +35,4 @@ explore.
 [fluent]: https://fluentbit.io
 [node_exporter]: https://github.com/prometheus/node_exporter
 [prometheus]: https://prometheus.io
+````

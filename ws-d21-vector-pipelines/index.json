@@ -11,8 +11,12 @@
     },
     "steps": [
       {
+        "title": "Our learning environment",
+        "text": "steps/1-environment.md"
+      },
+      {
         "title": "Our first Vector pipeline",
-        "text": "steps/1-first-pipeline.md"
+        "text": "steps/1.1-first-pipeline.md"
       },
       {
         "title": "Vector Remap Language",
@@ -56,11 +60,11 @@
       },
       {
         "title": "The agents in our pipeline",
-        "text": "steps/3.1-agents.md"
+        "text": "steps/3.1-aggregator-agents.md"
       },
       {
         "title": "Configuring sources",
-        "text": "steps/3.2-sources.md"
+        "text": "steps/3.2-aggregator-sources.md"
       },
       {
         "title": "Monitoring Vector",
