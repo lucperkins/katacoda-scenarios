@@ -27,4 +27,4 @@ explore.
 [compose]: https://docs.docker.com/compose
 [datadog]: https://docs.datadoghq.com/agent
 [node_exporter]: https://github.com/prometheus/node_exporter
-[prometheus]: https://prometheus.io q
+[prometheus]: https://prometheus.io
