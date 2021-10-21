@@ -89,6 +89,10 @@
     "assets": {
       "host01": [
         {
+          "file": "images/aggregator.png",
+          "target": "/etc/vector/images"
+        },
+        {
           "file": "Makefile",
           "target": "/etc/vector"
         },

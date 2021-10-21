@@ -8,6 +8,10 @@ observability agents that send data to our Aggregator:
 These agents will all be sending logs. Our Aggregator will also be handling metrics emitted by
 [Prometheus][prometheus] [Node Exporters][node_exporter].
 
+Here's a diagram of what that looks like:
+
+![Vector Aggregator scenario](./images/aggregator.png)
+
 If you open up the `/etc/vector/aggregator/vector/aggregator/vector.toml`{{open}} file, you'll see
 an empty configuration file for our Aggregator.
 
@@ -20,7 +24,7 @@ Aggregators are just plain Vector instances used in a certain way (this is the h
 that we can observe Aggregators using `vector tap`{{execute T2}} and `vector top`{{execute T3}}, so don't forget to
 explore.
 
-[compose]:
+[compose]: https://docs.docker.com/compose
 [datadog]: https://docs.datadoghq.com/agent
 [node_exporter]: https://github.com/prometheus/node_exporter
-[prometheus]: https://prometheus.io
+[prometheus]: https://prometheus.io q
