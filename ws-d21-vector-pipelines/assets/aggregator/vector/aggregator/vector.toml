@@ -4,6 +4,10 @@
 
 # insert-datadog-agent-source
 
+# insert-enrichment-tables-config
+
+#insert-enrichment-transform
+
 [transforms.logs_router]
 type = "route"
 inputs = ["*_agents"]

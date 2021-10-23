@@ -1,21 +1,12 @@
 version: '3.8'
 services:
-  # Two Vector Agents emit random HTTP logs
-  vector_http_logs_agent:
-    image: timberio/vector:0.17.0-alpine
-    deploy:
-      replicas: 2
-    volumes:
-      - ./vector/agent/http:/etc/vector:ro
-    depends_on:
-      - aggregator
-  # Two Vector Agents emit random Syslog logs
+  # Two Vector Agents
   vector_syslog_logs_agent:
     image: timberio/vector:0.17.0-alpine
     deploy:
       replicas: 2
     volumes:
-      - ./vector/agent/syslog:/etc/vector:ro
+      - ./vector/agent:/etc/vector:ro
     depends_on:
       - aggregator
   # Two Datadog Agents
@@ -52,11 +43,11 @@ services:
     volumes:
       - ./vector/aggregator:/etc/vector:ro
   
-  # Vector agent producing logs for the Datadog Agent
-  dd_logs_producer:
-    image: timberio/vector:0.17.0-alpine
-    environment:
-      - DD_API_KEY
-    volumes:
-      - ./vector/producer:/etc/vector:ro
-      - ./logs:/tmp/logs
+  # Processes generating logs (ignore this)
+  sensitive_user_logs:
+    image: lucperkins/rando:latest
+    command: [ "logs", "--kind", "sensitive", "--interval", "0.5s" ]
+  
+  iot_logs:
+    image: lucperkins/rando:latest
+    command: [ "logs", "--kind", "iot", "--interval", "0.5s" ]
