@@ -141,10 +141,6 @@
           "target": "/etc/vector/aggregator/vector/aggregator"
         },
         {
-          "file": "aggregator/vector/agent/vector.toml",
-          "target": "/etc/vector/aggregator/vector/agent"
-        },
-        {
           "file": "aggregator/datadog/producer/vector.toml",
           "target": "/etc/vector/aggregator/datadog/producer"
         },
@@ -159,10 +155,6 @@
         {
           "file": "aggregator/fluent-bit/fluent-bit.conf",
           "target": "/etc/vector/aggregator/fluent-bit"
-        },
-        {
-          "file": "aggregator/vector/aggregator/datadog/vector.toml",
-          "target": "/etc/vector/aggregator/vector/aggregator/datadog"
         },
         {
           "file": "aggregator/vector/aggregator/codes.csv",
