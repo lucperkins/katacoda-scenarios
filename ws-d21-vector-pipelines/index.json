@@ -18,16 +18,16 @@
         "text": "steps/1.1-first-pipeline.md"
       },
       {
-        "title": "Vector Remap Language",
+        "title": "Vector Remap Language (VRL)",
         "text": "steps/2-vector-remap-language.md"
       },
       {
-        "title": "VRL programs",
-        "text": "steps/2.1-vrl-programs.md"
+        "title": "The VRL REPL",
+        "text": "steps/2.1-vrl-repl.md"
       },
       {
-        "title": "The VRL REPL",
-        "text": "steps/2.2-vrl-repl.md"
+        "title": "VRL programs",
+        "text": "steps/2.2-vrl-programs.md"
       },
       {
         "title": "Paths and the dot syntax",
