@@ -21,6 +21,7 @@ services:
       - ./datadog:/etc/datadog-agent
       - ./logs:/tmp/logs:ro
     depends_on:
+      - sensitive_user_logs
       - aggregator
   # Prometheus Node Exporters
   node_exporter:
@@ -46,7 +47,9 @@ services:
   # Processes generating logs (ignore this)
   sensitive_user_logs:
     image: lucperkins/rando:latest
-    command: [ "logs", "--kind", "sensitive", "--interval", "0.5s" ]
+    command: [ "logs", "--kind", "sensitive", "--interval", "0.5s", "--file", "/tmp/logs/out.log" ]
+    volumes:
+      - ./logs:/tmp/logs
   
   iot_logs:
     image: lucperkins/rando:latest
