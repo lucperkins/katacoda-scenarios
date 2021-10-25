@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  # Two Vector Agents
+  # Vector Agents
   vector_syslog_logs_agent:
     image: timberio/vector:0.17.0-alpine
     deploy:
@@ -9,7 +9,7 @@ services:
       - ./vector/agent:/etc/vector:ro
     depends_on:
       - aggregator
-  # Two Datadog Agents
+  # Datadog Agents
   datadog_agent:
     image: gcr.io/datadoghq/agent:7
     privileged: true
@@ -22,7 +22,7 @@ services:
       - ./logs:/tmp/logs:ro
     depends_on:
       - aggregator
-  # Two Prometheus Node Exporter
+  # Prometheus Node Exporters
   node_exporter:
     image: prom/node-exporter:v1.2.2
     ports:

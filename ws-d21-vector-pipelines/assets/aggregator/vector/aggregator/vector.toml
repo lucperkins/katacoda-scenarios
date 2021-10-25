@@ -1,79 +1,10 @@
 ## Log sources
 
-# insert-vector-agent-source
+#insert-vector-agent-source
 
-# insert-datadog-agent-source
+#insert-datadog-agent-source
 
-# insert-enrichment-tables-config
+#insert-enrichment-tables-config
 
 #insert-enrichment-transform
 
-[transforms.logs_router]
-type = "route"
-inputs = ["*_agents"]
-
-[transforms.logs_router.route]
-http_logs = 'true'
-syslog_logs = 'true'
-apache_common_logs = 'true'
-
-## Remap
-
-# Parse HTTP logs into JSON (and modify)
-
-# Parse Syslog logs (and modify)
-
-# Parse Apache Common logs (and modify)
-
-## Redact
-
-# Apply redaction to sensitive logs
-
-## Filters
-
-# Filter out OPTION and HEAD requests
-
-# Filter out non-urgent Syslog logs (notice, informational, debug)
-
-# Pipe everything to the console
-[sinks.console_out]
-type = "console"
-inputs = ["*"]
-target = "stdout"
-encoding = { codec = "json" }
-
-## Metrics transforms
-# Limit tag cardinality
-
-# Add tags
-
-
-## Destinations
-
-# Send some logs to S3
-
-# Send some other logs to Splunk
-
-## BONUS
-
-# Send to another Vector Aggregator!
-
-# Aggregator internal logs
-[sources.vector_logs]
-type = "internal_logs"
-host_key = "dash_workshop_katacoda"
-
-[sinks.logs_to_nowhere]
-type = "blackhole"
-inputs = ["vector_logs"]
-
-# Aggregator internal metrics
-[sources.vector_metrics]
-type = "internal_metrics"
-namespace = "vector"
-
-[sinks.metrics_to_nowhere]
-type = "blackhole"
-inputs = ["vector_metrics"]
-
-# api-config-insert

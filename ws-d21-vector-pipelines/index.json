@@ -113,10 +113,6 @@
           "target": "/etc/vector/monitoring-vector"
         },
         {
-          "file": "complex-pipeline/vector.toml",
-          "target": "/etc/vector/complex-pipeline"
-        },
-        {
           "file": "vrl/events.jsonl",
           "target": "/etc/vector/vrl"
         },

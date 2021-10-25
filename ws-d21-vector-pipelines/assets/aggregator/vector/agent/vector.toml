@@ -1,6 +1,6 @@
 [sources.random_http_logs]
 type = "generator"
-format = "shuffle"
+format = "json"
 interval = 1
 
 [transforms.tag]

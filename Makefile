@@ -9,4 +9,4 @@ dev:
 	kclocal -b
 
 validate:
-	katacoda validate:all --repo .
+	katacoda validate:all --repo ~/workspace/katacoda-scenarios
