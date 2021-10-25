@@ -1,25 +1,25 @@
 # Katacoda setup
-#curl -s "https://datadoghq.dev/katacodalabtools/r?raw=true" | bash
+curl -s "https://datadoghq.dev/katacodalabtools/r?raw=true" | bash
 
 # Remove unnecessary stuff that Vector installs automatically
-#rm -rf /etc/vector/vector.toml /etc/vector/examples
+rm -rf /etc/vector/vector.toml /etc/vector/examples
 
 # Set environment variables
-#export REGION="us-west-az-1"
-#export AGGREGATOR="vector-agg-3"
+export REGION="us-west-az-1"
+export AGGREGATOR="vector-agg-3"
 
 # Some handy aliases
-#alias dc="docker-compose"
+alias dc="docker-compose"
 
 # VS Code setup for extensions
-#echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections
-#cd /tmp && apt-get update -y && apt install libarchive-tools -y
+echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections
+cd /tmp && apt-get update -y && apt install libarchive-tools -y
 
 # TOML extension
-#curl https://bungcip.gallery.vsassets.io/_apis/public/gallery/publisher/bungcip/extension/better-toml/0.3.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage --output /root/better-toml.vsix
+curl https://bungcip.gallery.vsassets.io/_apis/public/gallery/publisher/bungcip/extension/better-toml/0.3.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage --output /root/better-toml.vsix
 
-#/opt/vscode/node /opt/vscode/out/node/entry.js "--install-extension=/root/better-toml.vsix" "--extensions-dir=/opt/.katacodacode/extensions/"
+/opt/vscode/node /opt/vscode/out/node/entry.js "--install-extension=/root/better-toml.vsix" "--extensions-dir=/opt/.katacodacode/extensions/"
 
 # VRL extension
-#curl https://marketplace.visualstudio.com/_apis/public/gallery/publishers/lucperkins/vsextensions/vrl-vscode/0.1.2/vspackage | bsdtar -xvf - extension
-#mv extension /opt/.katacodacode/extensions/lucperkins.vrl-vscode-0.1.2
+curl https://marketplace.visualstudio.com/_apis/public/gallery/publishers/lucperkins/vsextensions/vrl-vscode/0.1.2/vspackage | bsdtar -xvf - extension
+mv extension /opt/.katacodacode/extensions/lucperkins.vrl-vscode-0.1.2
