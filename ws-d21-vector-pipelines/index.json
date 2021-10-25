@@ -83,6 +83,10 @@
         "text": "steps/3.6-aggregator-redact.md"
       },
       {
+        "title": "Routing events",
+        "text": "steps/3.7-aggregator-route.md"
+      },
+      {
         "title": "Unit testing Vector transforms",
         "text": "steps/4-unit-testing.md"
       }
