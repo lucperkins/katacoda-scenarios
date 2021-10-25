@@ -1,9 +1,9 @@
 Our workshop environment has two core elements:
 
-- A Linux terminal environment where we'll work with a pre-installed Vector
-  executable (and later with some other tools)
-- An in-browser version of [Visual Studio Code][vscode] where we'll view and
-  edit configuration and other files.
+- The `Terminal` window is a Linux terminal environment where we'll work with a
+  pre-installed Vector executable and some other tools
+- The `IDE` window is an in-browser version of [Visual Studio Code][vscode]
+  where we'll view and edit configuration and other files.
 
 First, let's explore our terminal by making sure that Vector is installed in our
 environment:

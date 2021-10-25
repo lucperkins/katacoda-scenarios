@@ -1,3 +1,6 @@
+# Katacoda setup
+curl -s "https://datadoghq.dev/katacodalabtools/r?raw=true" | bash
+
 # Remove unnecessary stuff that Vector installs automatically
 rm -rf /etc/vector/vector.toml /etc/vector/examples
 
