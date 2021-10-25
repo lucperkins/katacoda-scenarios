@@ -4,7 +4,10 @@
 
 #insert-datadog-agent-source
 
+#insert-blackhole-sink
+
 #insert-enrichment-tables-config
 
 #insert-enrichment-transform
 
+#insert-redaction-transform

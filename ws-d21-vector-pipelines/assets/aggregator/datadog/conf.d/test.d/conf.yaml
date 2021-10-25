@@ -1,7 +1,8 @@
 logs:
   - type: tcp
-    path: "/tmp/logs/*.log"
-    service: "datadog-agent"
+    port: 
+    service: ""
     source: "file"
+    # Tags will later be used for routing and other purposes
     tags:
-      - type: apache_common
+      - type: transaction_logs

@@ -109,10 +109,6 @@
           "target": "/etc/vector/first-pipeline"
         },
         {
-          "file": "monitoring-vector/vector.toml",
-          "target": "/etc/vector/monitoring-vector"
-        },
-        {
           "file": "vrl/events.jsonl",
           "target": "/etc/vector/vrl"
         },
