@@ -68,23 +68,23 @@
       },
       {
         "title": "Configuring a temporary sink",
-        "text": "steps/3.4-aggregator-sink.md"
+        "text": "steps/3.3-aggregator-sink.md"
+      },
+      {
+        "title": "Starting up our Aggregator",
+        "text": "steps/3.4-aggregator-run"
       },
       {
         "title": "Enriching events with CSV data",
         "text": "steps/3.5-aggregator-enrich.md"
       },
       {
-        "title": "Running the Aggregator",
-        "text": "steps/3.5-aggregator-run.md"
-      },
-      {
-        "title": "Monitoring Vector",
-        "text": "steps/4-monitoring-vector.md"
+        "title": "Redacting PII",
+        "text": "steps/3.6-aggregator-redact.md"
       },
       {
         "title": "Unit testing Vector transforms",
-        "text": "steps/5-unit-testing.md"
+        "text": "steps/4-unit-testing.md"
       }
     ],
     "finish": {

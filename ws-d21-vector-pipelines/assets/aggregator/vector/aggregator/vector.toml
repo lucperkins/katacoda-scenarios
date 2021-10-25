@@ -1,4 +1,6 @@
-## Log sources
+[api]
+enabled = true
+address = "0.0.0.0:8686"
 
 #insert-vector-agent-source
 
