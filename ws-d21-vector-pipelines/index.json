@@ -72,7 +72,7 @@
       },
       {
         "title": "Starting up our Aggregator",
-        "text": "steps/3.4-aggregator-run"
+        "text": "steps/3.4-aggregator-run.md"
       },
       {
         "title": "Enriching events with CSV data",
