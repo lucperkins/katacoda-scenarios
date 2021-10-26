@@ -124,6 +124,10 @@
           "target": "/etc/vector/first-pipeline"
         },
         {
+          "file": "vrl/event.json",
+          "target": "/etc/vector/vrl"
+        },
+        {
           "file": "vrl/events.jsonl",
           "target": "/etc/vector/vrl"
         },
