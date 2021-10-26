@@ -9,8 +9,3 @@ If you open up the
 a (mostly) empty configuration file for our Aggregator. In the next few sections, we'll set up our
 Aggregator to collect data from multiple observability Agents and perform some processing work akin
 to what you'd find in the wild.
-
-[compose]: https://docs.docker.com/compose
-[datadog]: https://docs.datadoghq.com/agent
-[node_exporter]: https://github.com/prometheus/node_exporter
-[prometheus]: https://prometheus.io

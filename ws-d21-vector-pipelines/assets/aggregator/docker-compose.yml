@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   # Vector Agents
-  vector_syslog_logs_agent:
+  vector_agents:
     image: timberio/vector:0.17.0-alpine
     deploy:
       replicas: 2
@@ -10,7 +10,7 @@ services:
     depends_on:
       - aggregator
   # Datadog Agents
-  datadog_agent:
+  datadog_agents:
     image: gcr.io/datadoghq/agent:7
     privileged: true
     environment:

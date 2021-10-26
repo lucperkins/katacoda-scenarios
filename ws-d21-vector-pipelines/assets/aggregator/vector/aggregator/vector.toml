@@ -1,3 +1,4 @@
+# This enables some features that require the Vector API to be enabled
 [api]
 enabled = true
 address = "0.0.0.0:8686"
@@ -5,6 +6,8 @@ address = "0.0.0.0:8686"
 #insert-vector-agent-source
 
 #insert-datadog-agent-source
+
+#insert-prometheus-source
 
 #insert-blackhole-sink
 
@@ -15,3 +18,9 @@ address = "0.0.0.0:8686"
 #insert-redaction-transform
 
 #insert-route-transform
+
+#insert-s3-sink
+
+#insert-datadog-sink
+
+#insert-aggregator-sink
