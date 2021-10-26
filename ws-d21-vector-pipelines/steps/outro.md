@@ -1,20 +1,16 @@
 And that's a wrap! Thank you so much for taking part in Highly Scalable Observability Pipelines with Vector. I think we
 accomplished a great deal today. We learned the basics of configuring Vector pipelines, we got a taste of Vector Remap
-Language, we eavesdropped on Vector using `top` and `tap`, and more. As always, there were
+Language, we eavesdropped on Vector using `vector tap`, and more. As always, there were
 some things we had to brush over or skip entirely, but I hope that you come away from this with a solid initial toolkit
 that you can use to begin building your own highly scalable observability data pipelines using Vector.
 
 ## Community
-
-If you want to know more, please do stay in touch:
 
 * [Discord]
 * [Twitter]
 * [GitHub]
 
 ## Further learning
-
-And if you'd like to keep learning:
 
 * [The Vector website][vector]
 * [The Vector documentation][docs]

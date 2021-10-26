@@ -30,7 +30,7 @@ services:
     container_name: vector_aggregator
     image: timberio/vector:nightly-alpine
     ports:
-      # GraphQL API for vector tap and vector top
+      # GraphQL API for vector tap
       - 8686:8686
       # Datadog Agents
       - 8080:8080
