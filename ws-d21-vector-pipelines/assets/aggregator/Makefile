@@ -3,5 +3,8 @@ run-aggregator-scenario:
 	up \
 	--detach
 
+check:
+	docker-compose ps
+
 restart-aggregator:
 	docker-compose restart aggregator

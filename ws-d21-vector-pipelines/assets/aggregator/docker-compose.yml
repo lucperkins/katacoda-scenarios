@@ -3,8 +3,6 @@ services:
   # Vector Agents
   vector_agents:
     image: timberio/vector:nightly-alpine
-    deploy:
-      replicas: 2
     volumes:
       - ./vector/agent:/etc/vector:ro
       - ./logs/iot:/tmp/logs/iot
@@ -16,8 +14,6 @@ services:
     privileged: true
     environment:
       - DD_API_KEY
-    deploy:
-      replicas: 2
     volumes:
       - ./datadog:/etc/datadog-agent
       - ./logs:/tmp/logs:ro
