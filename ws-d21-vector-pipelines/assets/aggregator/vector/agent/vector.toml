@@ -1,13 +1,13 @@
-[sources.random_http_logs]
-type = "generator"
-format = "json"
-interval = 1
+[sources.file_in]
+type = "file"
+include = ["/tmp/logs/iot/*.log"]
+read_from = "beginning"
 
 [transforms.tag]
 type = "remap"
-inputs = ["random_http_logs"]
+inputs = ["file_in"]
 source = '''
-.tags.type = "http"
+.tags.type = "iot"
 '''
 
 [sinks.aggregator]

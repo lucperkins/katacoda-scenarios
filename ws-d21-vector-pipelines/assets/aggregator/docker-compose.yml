@@ -2,7 +2,7 @@ version: '3.8'
 services:
   # Vector Agents
   vector_agents:
-    image: timberio/vector:0.17.0-alpine
+    image: timberio/vector:nightly-alpine
     deploy:
       replicas: 2
     volumes:
@@ -31,7 +31,7 @@ services:
   # The Vector Aggregator
   aggregator:
     container_name: vector_aggregator
-    image: timberio/vector:0.17.0-alpine
+    image: timberio/vector:nightly-alpine
     ports:
       # GraphQL API for vector tap and vector top
       - 8686:8686
@@ -47,10 +47,12 @@ services:
   # Processes generating logs (ignore this)
   sensitive_user_logs:
     image: lucperkins/rando:latest
-    command: [ "logs", "--kind", "sensitive", "--interval", "0.5s", "--file", "/tmp/logs/out.log" ]
+    command: [ "logs", "--kind", "sensitive", "--interval", "0.5s", "--file", "/tmp/logs/transaction/out.log" ]
     volumes:
-      - ./logs:/tmp/logs
+      - ./logs/transaction:/tmp/logs/transaction
   
   iot_logs:
     image: lucperkins/rando:latest
-    command: [ "logs", "--kind", "iot", "--interval", "0.5s" ]
+    command: [ "logs", "--kind", "iot", "--interval", "0.5s", "--file", "/tmp/logs/iot/out.log" ]
+    volumes:
+      - ./logs/iot:/tmp/logs/iot

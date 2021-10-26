@@ -92,7 +92,11 @@
       {
         "title": "Send data to another Aggregator",
         "text": "steps/3.9-aggregator-downstream.md"
-      }
+      },
+      {
+        "title": "Using Vector's own observability data",
+        "text": "steps/3.10-aggregator-internal.md"
+      },
       {
         "title": "Unit testing Vector transforms",
         "text": "steps/4-unit-testing.md"
@@ -112,8 +116,12 @@
           "target": "/etc/vector"
         },
         {
-          "file": "logs/.gitkeep",
-          "target": "/etc/vector/logs"
+          "file": "logs/transaction/.gitkeep",
+          "target": "/etc/vector/logs/transaction"
+        },
+        {
+          "file": "logs/iot/.gitkeep",
+          "target": "/etc/vector/iot/transaction"
         },
         {
           "file": "first-pipeline/vector.toml",
