@@ -49,5 +49,4 @@ condition = '''
 We'll go over this in more depth in an upcoming scenario.
 
 [jq]: https://stedolan.github.io/jq
-[vrl_cmd]: https://vector.dev/docs/reference/cli/#vrl
 [vrl_funcs]: https://vrl.dev/functions
