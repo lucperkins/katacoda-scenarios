@@ -1,5 +1,5 @@
 Now that we've learned some basics of building Vector pipelines, it's time to configure a Vector
-Aggregator. Remembering back to the intro, using an Aggregator has several benefits:
+Aggregator. Remembering back to the intro, using an Aggregator has one major benefit:
 
 * You can distribute observability data processing across multiple nodes in your pipeline, rather
   than making your agent the sole locus of work.
