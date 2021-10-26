@@ -96,10 +96,6 @@
       {
         "title": "Using Vector's own observability data",
         "text": "steps/3.10-aggregator-internal.md"
-      },
-      {
-        "title": "Unit testing Vector transforms",
-        "text": "steps/4-unit-testing.md"
       }
     ],
     "finish": {
@@ -130,18 +126,6 @@
         {
           "file": "vrl/events.jsonl",
           "target": "/etc/vector/vrl"
-        },
-        {
-          "file": "unit-testing/vector.toml",
-          "target": "/etc/vector/unit-testing"
-        },
-        {
-          "file": "unit-testing/test.toml",
-          "target": "/etc/vector/unit-testing"
-        },
-        {
-          "file": "unit-testing/parse.vrl",
-          "target": "/etc/vector/unit-testing"
         },
         {
           "file": "aggregator/docker-compose.yml",
