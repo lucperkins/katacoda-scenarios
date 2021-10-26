@@ -108,8 +108,8 @@
           "target": "/etc/vector/images"
         },
         {
-          "file": "Makefile",
-          "target": "/etc/vector"
+          "file": "aggregator/Makefile",
+          "target": "/etc/vector/aggregator"
         },
         {
           "file": "aggregator/logs/transaction/.gitkeep",
