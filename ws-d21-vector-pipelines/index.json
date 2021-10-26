@@ -112,12 +112,12 @@
           "target": "/etc/vector"
         },
         {
-          "file": "logs/transaction/.gitkeep",
-          "target": "/etc/vector/logs/transaction"
+          "file": "aggregator/logs/transaction/.gitkeep",
+          "target": "/etc/vector/aggregator/logs/transaction"
         },
         {
-          "file": "logs/iot/.gitkeep",
-          "target": "/etc/vector/iot/transaction"
+          "file": "aggregator/logs/iot/.gitkeep",
+          "target": "/etc/vector/aggregator/logs/iot"
         },
         {
           "file": "first-pipeline/vector.toml",
@@ -130,10 +130,6 @@
         {
           "file": "aggregator/docker-compose.yml",
           "target": "/etc/vector/aggregator"
-        },
-        {
-          "file": "aggregator/logs/.gitkeep",
-          "target": "/etc/vector/aggregator/logs"
         },
         {
           "file": "aggregator/datadog/datadog.yaml",
