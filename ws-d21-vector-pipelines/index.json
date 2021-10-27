@@ -1,6 +1,6 @@
 {
   "title": "Highly Scalable Observability Data Pipelines with Vector",
-  "description": "Vector is an open source platform for creating highly flexible and scalable observability data pipelines. It runs on your infrastructure and connects a wide variety of data sources—from Syslog to HTTP to Prometheus to Kubernetes logs—to a wide variety of sinks—from Kafka to S3 to Clickhouse to SaaS platforms like Datadog. Those pipelines can serve a wide array of use cases, such as ensuring data locality, enabling easy migration between SaaS vendors, data enrichment, and cost reduction. Built in Rust and designed for maximum throughput, minimum resource usage, and operational ease of use, Vector may just be the tool you’re looking for to power observability in your large-scale systems.\n\nIn this workshop, you’ll learn how to use Vector to create processing pipelines for your logs and metrics via Vector’s built-in event transformation DSL (Vector Remap Language). We’ll use it to modify logs and metrics as they flow through your Vector instances, and showcase Vector aggregators to process data from multiple observability agents (including the Datadog Agent). The general approach will be hands-on and geared toward real use cases.",
+  "description": "Vector is an open source platform for creating highly flexible and scalable observability data pipelines. It runs on your infrastructure and connects a wide variety of data sources—from Syslog to HTTP to Prometheus to Kubernetes logs—to a wide variety of sinks—from Kafka to S3 to Clickhouse to SaaS platforms like Datadog. Those pipelines can serve a wide array of use cases, such as ensuring data locality, enabling easy migration between SaaS vendors, data enrichment, and cost reduction. Built in Rust and designed for maximum throughput, minimum resource usage, and operational ease of use, Vector may just be the tool you’re looking for to power observability in your large-scale systems.\n\nIn this workshop, you’ll learn how to use Vector to create processing pipelines for your logs using Vector’s built-in event transformation DSL (Vector Remap Language). We’ll use it to modify logs as they flow through your Vector instances, and showcase Vector Aggregators to process data from multiple observability agents (including the Datadog Agent). The general approach will be hands-on and geared toward real use cases.",
   "difficulty": "intermediate",
   "time": "2.5 hours",
   "details": {
@@ -82,24 +82,20 @@
         "text": "steps/3.6-aggregator-redact.md"
       },
       {
-        "title": "Tagging metrics",
-        "text": "steps/3.7-aggregator-metrics.md"
-      },
-      {
         "title": "Routing events",
-        "text": "steps/3.8-aggregator-route.md"
+        "text": "steps/3.7-aggregator-route.md"
       },
       {
         "title": "Multiple sinks",
-        "text": "steps/3.9-aggregator-multi-sink.md"
+        "text": "steps/3.8-aggregator-multi-sink.md"
       },
       {
         "title": "Using Vector's own observability data",
-        "text": "steps/3.10-aggregator-internal.md"
+        "text": "steps/3.9-aggregator-internal.md"
       },
       {
         "title": "Send data to another Aggregator",
-        "text": "steps/3.11-aggregator-downstream.md"
+        "text": "steps/3.10-aggregator-downstream.md"
       }
     ],
     "finish": {

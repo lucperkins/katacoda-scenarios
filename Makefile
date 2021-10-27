@@ -1,4 +1,6 @@
 copy:
+	rm ~/workspace/datadog/LearningLabs/ws-d21-vector-pipelines-pathway.json
+	rm -rf ~/workspace/datadog/LearningLabs/ws-d21-vector-pipelines
 	cp -rf ws-d21-vector-pipelines ~/workspace/datadog/LearningLabs
 	cp ws-d21-vector-pipelines-pathway.json ~/workspace/datadog/LearningLabs
 

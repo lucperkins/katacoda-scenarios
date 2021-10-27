@@ -20,11 +20,6 @@ services:
     depends_on:
       - sensitive_user_logs
       - aggregator
-  # Prometheus Node Exporters
-  node_exporter:
-    image: prom/node-exporter:v1.2.2
-    ports:
-      - 9100:9100
   # The Vector Aggregator
   aggregator:
     container_name: vector_aggregator
