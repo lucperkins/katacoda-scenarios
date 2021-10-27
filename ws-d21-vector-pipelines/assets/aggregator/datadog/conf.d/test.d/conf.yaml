@@ -2,6 +2,3 @@ logs:
   - type: file
     path: "/tmp/logs/transaction/*.log"
     service: "datadog-agent"
-    # Tags will later be used for routing and other purposes
-    tags:
-      - type: transaction_logs
