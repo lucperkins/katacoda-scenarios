@@ -8,3 +8,6 @@ check:
 
 restart-aggregator:
 	docker-compose restart aggregator
+
+aggregator-logs:
+	docker-compose logs aggregator

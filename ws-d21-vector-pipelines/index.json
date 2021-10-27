@@ -82,20 +82,24 @@
         "text": "steps/3.6-aggregator-redact.md"
       },
       {
+        "title": "Tagging metrics",
+        "text": "steps/3.7-aggregator-metrics.md"
+      },
+      {
         "title": "Routing events",
-        "text": "steps/3.7-aggregator-route.md"
+        "text": "steps/3.8-aggregator-route.md"
       },
       {
         "title": "Multiple sinks",
-        "text": "steps/3.8-aggregator-multi-sink.md"
-      },
-      {
-        "title": "Send data to another Aggregator",
-        "text": "steps/3.9-aggregator-downstream.md"
+        "text": "steps/3.9-aggregator-multi-sink.md"
       },
       {
         "title": "Using Vector's own observability data",
         "text": "steps/3.10-aggregator-internal.md"
+      },
+      {
+        "title": "Send data to another Aggregator",
+        "text": "steps/3.11-aggregator-downstream.md"
       }
     ],
     "finish": {

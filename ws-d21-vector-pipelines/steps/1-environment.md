@@ -1,7 +1,8 @@
 Our workshop environment has two core elements:
 
 - The `Terminal` window is a Linux terminal environment where we'll work with a
-  pre-installed Vector executable and some other tools
+  pre-installed Vector executable and some other tools. You can run terminal
+  commands by clicking on them. Try it with `whoami`{{execute}}.
 - The `IDE` window is an in-browser version of [Visual Studio Code][vscode]
   where we'll view and edit configuration and other files.
 

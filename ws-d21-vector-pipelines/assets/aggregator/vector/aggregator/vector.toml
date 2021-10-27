@@ -17,10 +17,16 @@ address = "0.0.0.0:8686"
 
 #insert-redaction-transform
 
+#insert-metrics-transform
+
 #insert-route-transform
 
 #insert-s3-sink
 
 #insert-datadog-sink
+
+#insert-prometheus-sink
+
+#insert-vector-internal
 
 #insert-aggregator-sink
