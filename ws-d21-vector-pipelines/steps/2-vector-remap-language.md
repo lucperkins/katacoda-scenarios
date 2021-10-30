@@ -32,21 +32,5 @@ inputs = ["my_logs"]
 file = "/etc/vector/vrl/modify.vrl"
 ```
 
-## Not just remapping
-
-VRL can also be used for supplying **conditions** for things like routing and filtering. Here's an
-example:
-
-```toml
-[transforms.remove_info_logs]
-type = "filter"
-inputs = ["my_logs"]
-condition = '''
-.level != "debug"
-'''
-```
-
-We'll go over this in more depth in an upcoming scenario.
-
 [jq]: https://stedolan.github.io/jq
 [vrl_funcs]: https://vrl.dev/functions
